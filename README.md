@@ -1,4 +1,8 @@
-# Aplicativo Web com Autenticação por E-mail e Magic Links
+# O site do Tiago está sendo construído
+
+Nos próximos dias vamos tirar uma ideia da cabeça e transformar em site na internet. Não existe uma rota bem definida, os caminhos serão mais emocionantes que o final da estrada.
+
+# O site do Tiago usa Aplicativo Web com Autenticação por E-mail e Magic Links
 
 Este é um template de projeto para criação de aplicativos web que oferece autenticação segura por e-mail, utilizando magic links. É baseado em tecnologias populares, como Node.js, Next.js, React, NextAuth.js e Nodemailer, e foi projetado para simplificar o processo de início de projetos.
 
