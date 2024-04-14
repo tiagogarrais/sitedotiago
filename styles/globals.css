@@ -1,0 +1,85 @@
+* {
+  font-size: 20px;
+}
+
+body {
+  max-width: 1200px;
+  margin: auto;
+  background-color: #000;
+  color: #fff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.principal {
+  width: 70%;
+  max-width: 800px;
+  background-color: #333;
+  margin: auto;
+}
+a {
+  color: royalblue;
+}
+
+article:hover {
+  transform: translateY(-2px); /* Move o elemento para cima */
+  background-color: rgba(204, 204, 204, 0.1); /* Cor com 10% de transparência */
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: lightgreen;
+}
+
+h3::before {
+  content: "\00BB"; /* Código Unicode para uma seta para a esquerda */
+  margin-right: 5px; /* Espaço entre a seta e o texto */
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.8rem;
+}
+
+.contatos {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contatos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contatos li {
+  border-bottom: 1px solid #ccc; /* Separação entre itens */
+  padding: 10px 0;
+}
+
+.contatos .nome {
+  font-weight: bold;
+}
+
+.contatos .atividade {
+  font-weight: 400;
+}
+
+.contatos .telefone {
+  color: #666;
+}
