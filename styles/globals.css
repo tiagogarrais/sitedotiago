@@ -1,9 +1,6 @@
-* {
-  font-size: 20px;
-}
-
 body {
-  max-width: 1200px;
+  width: 95%;
+  max-width: 850px;
   margin: auto;
   background-color: #000;
   color: #fff;
@@ -12,7 +9,7 @@ body {
 }
 
 .principal {
-  width: 70%;
+  width: 95%;
   max-width: 800px;
   background-color: #333;
   margin: auto;
@@ -21,40 +18,22 @@ a {
   color: royalblue;
 }
 
-article:hover {
-  transform: translateY(-2px); /* Move o elemento para cima */
-  background-color: rgba(204, 204, 204, 0.1); /* Cor com 10% de transparência */
-}
-
-h1 {
-  font-size: 2.5rem;
+article {
+  background-color: rgba(204, 204, 204, 0.05); /* Cor com 5% de transparência */
+  margin-bottom: 1%;
 }
 
 h2 {
-  font-size: 2rem;
   text-decoration: underline;
 }
 
 h3 {
-  font-size: 1.5rem;
   color: lightgreen;
 }
 
 h3::before {
   content: "\00BB"; /* Código Unicode para uma seta para a esquerda */
   margin-right: 5px; /* Espaço entre a seta e o texto */
-}
-
-h4 {
-  font-size: 1.2rem;
-}
-
-h5 {
-  font-size: 1rem;
-}
-
-h6 {
-  font-size: 0.8rem;
 }
 
 .contatos {
