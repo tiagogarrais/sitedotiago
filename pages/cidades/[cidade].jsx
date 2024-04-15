@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Profissionais from "../../components/profissionais";
 
 export default function Cidades() {
   const router = useRouter();
@@ -7,37 +8,25 @@ export default function Cidades() {
 
   return (
     <>
-      <h1>Serviços e informações úteis na cidade de Brejo Santo - CE</h1>
+      <h2>Brejo Santo - CE</h2>
 
       <div className="principal">
         <h2>Profissionais autônomos</h2>
         <h3>Motorista</h3>
-        <article>
-          <span>Junior Moral</span>
-          <span> - </span>
-          <span className="whatsApp">
-            <a target="_blank" href="https://wa.me/88988888888">
-              WhatsApp
-            </a>
-          </span>
-          <span> - </span>
-          <span className="Instagram">
-            <a target="_blank" href="https://www.instagram.com/juniormoral/">
-              Instagram
-            </a>
-          </span>
-        </article>
 
-        <h3>Encanadores</h3>
-        <div>
-          <article>
-            <span>João Silva</span>
-            <span> - </span>
-            <span className="whatsApp">
-              <a href="https://wa.me/88988888888">WhatsApp</a>
-            </span>
-          </article>
-        </div>
+        <Profissionais
+          nome="Junior Moral"
+          profissao="Motorista"
+          numeroWhatsapp="88955552222"
+          instagram="juniormoralmotorista"
+        />
+
+        <Profissionais
+          nome="Zé da Topic"
+          profissao="Motorista"
+          numeroWhatsapp="88944447777"
+          instagram="zedatopic"
+        />
 
         <div className="delivery-comida">
           <h2>Pedir comida</h2>
