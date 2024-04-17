@@ -15,43 +15,20 @@ export default function Cidades() {
         <h3>Motorista</h3>
 
         <Profissionais
+          id="1"
           nome="Junior Moral"
-          profissao="Motorista"
+          atividade="Motorista"
           numeroWhatsapp="88955552222"
           instagram="juniormoralmotorista"
         />
 
         <Profissionais
+          id="2"
           nome="Zé da Topic"
-          profissao="Motorista"
+          atividade="Motorista"
           numeroWhatsapp="88944447777"
           instagram="zedatopic"
         />
-
-        <div className="delivery-comida">
-          <h2>Pedir comida</h2>
-          <h3>Restaurantes</h3>
-          <article>
-            <div>
-              <span>Arena do Bode</span>
-              <span> - </span>
-              <span className="whatsApp">
-                <a href="https://wa.me/88999999999">WhatsApp</a>{" "}
-              </span>
-            </div>
-          </article>
-
-          <h3>Hamburgueria</h3>
-          <article>
-            <div>
-              <span>Hamburger Dogão</span>
-              <span> - </span>
-              <span className="whatsApp">
-                <a href="https://wa.me/88999999999">WhatsApp</a>{" "}
-              </span>
-            </div>
-          </article>
-        </div>
       </div>
     </>
   );
