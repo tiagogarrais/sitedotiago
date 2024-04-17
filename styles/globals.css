@@ -41,6 +41,11 @@ h3::before {
   margin: 0 auto;
 }
 
+.detalhes {
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
 .contatos ul {
   list-style: none;
   padding: 0;
