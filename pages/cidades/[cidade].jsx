@@ -1,19 +1,17 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Profissionais from "../../components/profissionais";
+import Formulario from "../../components/formulario";
 
 export default function Cidades() {
   const router = useRouter();
   const cidade = router.query.cidade;
 
   return (
-    <>
+    <div>
       <h2>Brejo Santo - CE</h2>
 
       <div className="principal">
-        <h2>Profissionais autônomos</h2>
-        <h3>Motorista</h3>
-
         <Profissionais
           id="1"
           nome="Junior Moral"
@@ -30,6 +28,8 @@ export default function Cidades() {
           instagram="zedatopic"
         />
       </div>
-    </>
+
+      <Formulario />
+    </div>
   );
 }
