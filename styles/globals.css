@@ -8,23 +8,46 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.principal {
+.principal,
+.aviso,
+form {
   width: 95%;
   max-width: 800px;
   background-color: #333;
-  margin: auto;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
+
+.exemplo {
+  background-color: #555;
+}
+
+form {
+  display: grid;
+  margin: auto;
+  max-width: 500px;
+  background-color: #666;
+}
+
 a {
   color: royalblue;
 }
 
 article {
-  background-color: rgba(204, 204, 204, 0.05); /* Cor com 5% de transparência */
+  background-color: rgba(204, 204, 204, 0.05);
   margin-bottom: 1%;
 }
 
 h2 {
   text-decoration: underline;
+  background-color: #555;
+  margin: 20px auto;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 h3 {
