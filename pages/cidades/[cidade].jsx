@@ -30,7 +30,6 @@ export default function Cidades() {
       </div>
 
       <Formulario />
-      <Premium />
     </div>
   );
 }
