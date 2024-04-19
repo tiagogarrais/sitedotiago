@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Profissionais from "../../components/profissionais";
 import Formulario from "../../components/formulario";
+import Premium from "../../components/premium";
 
 export default function Cidades() {
   const router = useRouter();
@@ -9,8 +10,7 @@ export default function Cidades() {
 
   return (
     <div>
-      <h2>Brejo Santo - CE</h2>
-
+      <h2>Bem vindos à Brejo Santo!</h2>
       <div className="principal">
         <Profissionais
           id="1"
@@ -30,6 +30,7 @@ export default function Cidades() {
       </div>
 
       <Formulario />
+      <Premium />
     </div>
   );
 }
