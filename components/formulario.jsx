@@ -5,6 +5,7 @@ export default function Formulario() {
   const [profissao, setProfissao] = useState("");
   const [telefone, setTelefone] = useState("");
   const [instagram, setInstagram] = useState("");
+  const [cidade, setCidade] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault(); // Evitar o comportamento padrão de atualização da página ao enviar o formulário
@@ -15,6 +16,7 @@ export default function Formulario() {
       profissao: profissao,
       telefone: telefone,
       instagram: instagram,
+      cidade: cidade,
     };
 
     // Enviar os dados para o servidor backend via POST (substitua a URL pela sua URL de endpoint)
@@ -49,6 +51,12 @@ export default function Formulario() {
         ></input>
         <input
           type="text"
+          placeholder="Cidade"
+          value={profissao}
+          onChange={(e) => setCidade(e.target.value)}
+        ></input>
+        <input
+          type="text"
           placeholder="Profissão ou atividade"
           value={profissao}
           onChange={(e) => setProfissao(e.target.value)}
@@ -66,7 +74,7 @@ export default function Formulario() {
           onChange={(e) => setInstagram(e.target.value)}
         ></input>
 
-        <button type="submit">Enviar</button>
+        <button type="submit">Enviar cadastro</button>
       </form>
     </>
   );
