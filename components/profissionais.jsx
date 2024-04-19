@@ -24,20 +24,21 @@ export default function Profissionais({
       </div>
       {mostrarDetalhes && ( // Exibir os detalhes apenas se mostrarDetalhes for true
         <div id={id} className="detalhes">
-          <span>
-            ({codigoArea}) {primeiraParteTelefone}-{segundaParteTelefone} -{" "}
-          </span>
-          <span>
+          <p>
+            Telefone ({codigoArea}) {primeiraParteTelefone}-
+            {segundaParteTelefone}
+          </p>
+          <p>
             <a target="_blank" href={`https://wa.me/${numeroWhatsapp}`}>
-              WhatsApp
+              Chamar no WhatsApp
             </a>
-          </span>
-          <span> - </span>
-          <span>
+          </p>
+
+          <p>
             <a target="_blank" href={`https://www.instagram.com/${instagram}/`}>
-              Instagram
+              Acessar Instagram
             </a>
-          </span>
+          </p>
         </div>
       )}
     </article>
