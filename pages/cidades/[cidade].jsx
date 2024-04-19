@@ -10,8 +10,8 @@ export default function Cidades() {
 
   return (
     <div>
-      <h2>Bem vindos à Brejo Santo!</h2>
       <div className="principal">
+        <h3>Empresas e profissionais cadastrados</h3>
         <Profissionais
           id="1"
           nome="Junior Moral"
