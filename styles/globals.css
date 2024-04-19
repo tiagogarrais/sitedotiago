@@ -8,9 +8,21 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+.cabecalho {
+  display: flex; /* Usando flexbox para alinhar os elementos lado a lado */
+  align-items: center; /* Alinhando verticalmente os elementos */
+  justify-content: center;
+  text-align: center;
+}
+
+.cabecalho h1 {
+  margin-left: 10px; /* Adicionando margem à esquerda para separar a imagem do texto */
+  margin: 0;
+  width: 700px;
+}
+
 .principal,
-.aviso,
-form {
+.aviso {
   width: 95%;
   max-width: 800px;
   background-color: #333;
@@ -59,6 +71,10 @@ h2 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   color: lightgreen;
+}
+
+button {
+  margin: auto;
 }
 
 h3 {
