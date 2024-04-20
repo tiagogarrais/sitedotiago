@@ -2,7 +2,7 @@ import { MongoClient } from "mongodb";
 
 const { MONGODB_URI, MONGODB_DB } = process.env;
 
-export default async function formulario(req, res) {
+export default async function Formulario(req, res) {
   if (req.method === "POST") {
     // Verificar se os dados do formulário foram enviados corretamente
     const { nome, profissao, telefone, instagram } = req.body;
@@ -44,10 +44,8 @@ export default async function formulario(req, res) {
     }
   } else {
     // Método não permitido
-    return res
-      .status(405)
-      .json({
-        error: "Método não permitido. Use POST para enviar o formulário.",
-      });
+    return res.status(405).json({
+      error: "Método não permitido. Use POST para enviar o formulário.",
+    });
   }
 }
