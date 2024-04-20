@@ -5,9 +5,9 @@ const { MONGODB_URI, MONGODB_DB } = process.env;
 export default async function Formulario(req, res) {
   if (req.method === "POST") {
     // Verificar se os dados do formulário foram enviados corretamente
-    const { nome, profissao, telefone, instagram } = req.body;
+    const { nome, profissao, numeroWhatsapp, instagram } = req.body;
 
-    if (!nome || !profissao || !telefone || !instagram) {
+    if (!nome || !profissao || !numeroWhatsapp || !instagram) {
       return res
         .status(400)
         .json({ error: "Todos os campos do formulário são obrigatórios." });
@@ -25,7 +25,7 @@ export default async function Formulario(req, res) {
       await db.collection("profissionais").insertOne({
         nome,
         profissao,
-        telefone,
+        numeroWhatsapp,
         instagram,
       });
 
