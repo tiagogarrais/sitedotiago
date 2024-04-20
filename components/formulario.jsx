@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Formulario() {
   const [nome, setNome] = useState("");
   const [profissao, setProfissao] = useState("");
-  const [telefone, setTelefone] = useState("");
+  const [numeroWhatsapp, setNumeroWhatsapp] = useState("");
   const [instagram, setInstagram] = useState("");
   const [cidade, setCidade] = useState("");
 
@@ -14,7 +14,7 @@ export default function Formulario() {
     const formData = {
       nome: nome,
       profissao: profissao,
-      telefone: telefone,
+      numeroWhatsapp: telefone,
       instagram: instagram,
       cidade: cidade,
     };
@@ -52,7 +52,7 @@ export default function Formulario() {
         <input
           type="text"
           placeholder="Cidade"
-          value={profissao}
+          value={cidade}
           onChange={(e) => setCidade(e.target.value)}
         ></input>
         <input
@@ -63,9 +63,9 @@ export default function Formulario() {
         ></input>
         <input
           type="tel"
-          placeholder="Telefone"
-          value={telefone}
-          onChange={(e) => setTelefone(e.target.value)}
+          placeholder="Número do Whatsapp"
+          value={numeroWhatsapp}
+          onChange={(e) => setNumeroWhatsapp(e.target.value)}
         ></input>
         <input
           type="text"
