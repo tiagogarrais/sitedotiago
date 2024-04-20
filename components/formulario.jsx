@@ -14,7 +14,7 @@ export default function Formulario() {
     const formData = {
       nome: nome,
       profissao: profissao,
-      numeroWhatsapp: telefone,
+      numeroWhatsapp: numeroWhatsapp,
       instagram: instagram,
       cidade: cidade,
     };
