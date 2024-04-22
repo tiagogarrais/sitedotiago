@@ -27,13 +27,25 @@ export default function Cidades() {
     fetchData();
   }, []); // Executa apenas uma vez ao montar o componente
 
-  return (
-    <div>
-      <div className="principal">
-        <h3>Empresas e profissionais cadastrados</h3>
-        {profissionais.map((profissional) => (
+  // Renderização dos profissionais agrupados por atividade e ordenados alfabeticamente
+  const renderProfissionaisPorAtividade = () => {
+    const profissionaisPorAtividade = {};
+    profissionais.forEach((profissional) => {
+      if (!profissionaisPorAtividade[profissional.atividade]) {
+        profissionaisPorAtividade[profissional.atividade] = [];
+      }
+      profissionaisPorAtividade[profissional.atividade].push(profissional);
+    });
+
+    // Ordenar as categorias alfabeticamente
+    const categoriasOrdenadas = Object.keys(profissionaisPorAtividade).sort();
+
+    return categoriasOrdenadas.map((atividade) => (
+      <div key={atividade}>
+        <h3>{atividade}</h3>
+        {profissionaisPorAtividade[atividade].map((profissional) => (
           <Profissionais
-            key={profissional.id} // Certifique-se de ter uma chave única para cada profissional
+            key={profissional.id}
             id={profissional.id}
             nome={profissional.nome}
             atividade={profissional.atividade}
@@ -43,6 +55,12 @@ export default function Cidades() {
           />
         ))}
       </div>
+    ));
+  };
+
+  return (
+    <div>
+      <div className="principal">{renderProfissionaisPorAtividade()}</div>
       <Formulario />
       <div className="centralizada">
         <small>https://sitedotiago.com.br/cidades/{cidade}</small>
