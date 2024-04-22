@@ -31,7 +31,6 @@ export default function Cidades() {
     <div>
       <div className="principal">
         <h3>Empresas e profissionais cadastrados</h3>
-        {/* Mapeamento dos dados dos profissionais */}
         {profissionais.map((profissional) => (
           <Profissionais
             key={profissional.id} // Certifique-se de ter uma chave única para cada profissional
@@ -44,8 +43,12 @@ export default function Cidades() {
           />
         ))}
       </div>
-
       <Formulario />
+      <div className="centralizada">
+        <small>https://sitedotiago.com.br/cidades/{cidade}</small>
+        <small>Site desenvolvido por Adm. Tiago Arrais</small>
+        <small>2024</small>
+      </div>
     </div>
   );
 }
