@@ -28,20 +28,18 @@ export default function Profissionais({
               Telefone ({codigoArea}) {primeiraParteTelefone}-
               {segundaParteTelefone}
             </p>
-            <p>
+            <div className="botoesquadrados">
               <a target="_blank" href={`https://wa.me/+55${whatsApp}`}>
-                Chamar no WhatsApp
+                <button className="btnquadrado">WhatsApp</button>
               </a>
-            </p>
 
-            <p>
               <a
                 target="_blank"
                 href={`https://www.instagram.com/${instagram}/`}
               >
-                Acessar Instagram
+                <button className="btnquadrado">Instagram</button>
               </a>
-            </p>
+            </div>
           </div>
         )}
       </article>
