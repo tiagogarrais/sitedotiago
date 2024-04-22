@@ -20,8 +20,7 @@ export default function Profissionais({
     <>
       <article onClick={handleClick}>
         <div className="basico">
-          <span>{atividade} - </span>
-          <span>{nome} ☎️;</span>{" "}
+          <span>{nome}</span>
         </div>
         {mostrarDetalhes && ( // Exibir os detalhes apenas se mostrarDetalhes for true
           <div id={id} className="detalhes">
