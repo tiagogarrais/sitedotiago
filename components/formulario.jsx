@@ -43,7 +43,10 @@ export default function Formulario() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h3>Cadastre aqui a sua atividade!</h3>
+        <div className="centralizada">
+          <h2>Quer fazer parte da nossa lista?</h2>
+        </div>
+        <h3>Cadastro</h3>
         <input
           type="text"
           placeholder="Nome"
@@ -85,6 +88,12 @@ export default function Formulario() {
         </label>
 
         <button type="submit">Enviar cadastro</button>
+
+        <small>A publicação básica é gratuita!</small>
+        <small>
+          Publicação completa custa R$20,00 e inclui links diretos para
+          instagram e WhatsApp
+        </small>
       </form>
     </>
   );
