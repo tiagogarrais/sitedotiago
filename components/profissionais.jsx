@@ -8,9 +8,9 @@ export default function Profissionais({
   instagram,
 }) {
   const [mostrarDetalhes, setMostrarDetalhes] = useState(false);
-  const codigoArea = numeroWhatsapp.substring(4, 6);
-  const primeiraParteTelefone = numeroWhatsapp.substring(6, 11);
-  const segundaParteTelefone = numeroWhatsapp.substring(11, 15);
+  const codigoArea = numeroWhatsapp.substring(0, 2);
+  const primeiraParteTelefone = numeroWhatsapp.substring(2, 7);
+  const segundaParteTelefone = numeroWhatsapp.substring(7, 11);
 
   function handleClick() {
     setMostrarDetalhes(!mostrarDetalhes); // Alternar o estado de exibição dos detalhes
