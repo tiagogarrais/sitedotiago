@@ -60,6 +60,7 @@ export default function Cidades() {
 
   return (
     <div>
+      <h1>Empresas e profissionais de Brejo Santo</h1>
       <div className="principal">{renderProfissionaisPorAtividade()}</div>
       <Formulario />
       <div className="centralizada">
