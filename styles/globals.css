@@ -8,17 +8,9 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.cabecalho {
-  display: flex; /* Usando flexbox para alinhar os elementos lado a lado */
-  align-items: center; /* Alinhando verticalmente os elementos */
-  justify-content: center;
+.logomarca {
+  border-radius: 8px;
   text-align: center;
-}
-
-.cabecalho h1 {
-  margin-left: 10px; /* Adicionando margem à esquerda para separar a imagem do texto */
-  margin: 0;
-  width: 700px;
 }
 
 .principal,
@@ -41,6 +33,7 @@ form {
   margin: auto;
   max-width: 500px;
   background-color: #666;
+  border-radius: 8px;
 }
 
 a {
@@ -48,7 +41,7 @@ a {
 }
 
 article {
-  background-color: rgba(204, 204, 204, 0.05);
+  background-color: #666;
   margin-bottom: 1%;
 }
 
