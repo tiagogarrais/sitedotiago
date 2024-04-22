@@ -9,7 +9,9 @@ export default function Cabecalho() {
         height={75}
         alt="Logomarca do site do Tiago.com.br"
       />
-      <h1>SiteDoTiago.com.br</h1>
+      <a href="/" style={{ textDecoration: "none" }}>
+        <h1>SiteDoTiago.com.br</h1>
+      </a>
     </div>
   );
 }
