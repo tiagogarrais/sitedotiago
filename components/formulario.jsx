@@ -3,7 +3,7 @@ import InputMask from "react-input-mask";
 
 export default function Formulario() {
   const [nome, setNome] = useState("");
-  const [profissao, setProfissao] = useState("");
+  const [atividade, setAtividade] = useState("");
   const [numeroWhatsapp, setNumeroWhatsapp] = useState("");
   const [instagram, setInstagram] = useState("");
   const [cidade, setCidade] = useState("");
@@ -14,7 +14,7 @@ export default function Formulario() {
     // Construir o objeto com os dados do formulário
     const formData = {
       nome: nome,
-      profissao: profissao,
+      atividade: atividade,
       numeroWhatsapp: numeroWhatsapp,
       instagram: instagram,
       cidade: cidade,
@@ -59,8 +59,8 @@ export default function Formulario() {
         <input
           type="text"
           placeholder="Profissão ou atividade"
-          value={profissao}
-          onChange={(e) => setProfissao(e.target.value)}
+          value={atividade}
+          onChange={(e) => setAtividade(e.target.value)}
         ></input>
 
         <InputMask
