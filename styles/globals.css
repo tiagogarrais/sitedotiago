@@ -13,6 +13,11 @@ body {
   text-align: center;
 }
 
+.btnquadrado {
+  height: 6em;
+  width: 6em;
+}
+
 .centralizada {
   text-align: center;
   display: grid;
@@ -75,6 +80,7 @@ h2 {
 
 button {
   margin: auto;
+  margin-bottom: 18px;
 }
 
 h3 {
@@ -98,6 +104,11 @@ h3::before {
 .detalhes {
   margin-top: 1%;
   margin-bottom: 3%;
+}
+
+.botoesquadrados {
+  display: flex;
+  justify-content: left;
 }
 
 .contatos ul {
