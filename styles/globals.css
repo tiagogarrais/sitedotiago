@@ -13,6 +13,11 @@ body {
   text-align: center;
 }
 
+.centralizada {
+  text-align: center;
+  display: grid;
+}
+
 .principal,
 .aviso {
   width: 95%;
@@ -30,7 +35,9 @@ body {
 
 form {
   display: grid;
+  padding: 10px;
   margin: auto;
+  width: 80%;
   max-width: 500px;
   background-color: #666;
   border-radius: 8px;
