@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InputMask from "react-input-mask";
 
 export default function Formulario() {
   const [nome, setNome] = useState("");
@@ -42,7 +43,7 @@ export default function Formulario() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h3>Não encontrou sua empresa? Cadastre aqui!</h3>
+        <h3>Cadastre aqui a sua atividade!</h3>
         <input
           type="text"
           placeholder="Nome"
@@ -61,18 +62,27 @@ export default function Formulario() {
           value={profissao}
           onChange={(e) => setProfissao(e.target.value)}
         ></input>
-        <input
-          type="tel"
-          placeholder="Número do Whatsapp"
+
+        <InputMask
+          mask="(99) 99999-9999"
+          maskChar="_"
+          id="numeroWhatsapp"
+          name="numeroWhatsapp"
           value={numeroWhatsapp}
           onChange={(e) => setNumeroWhatsapp(e.target.value)}
-        ></input>
-        <input
-          type="text"
-          placeholder="@ do Instagram"
-          value={instagram}
-          onChange={(e) => setInstagram(e.target.value)}
-        ></input>
+          placeholder="Número do WhatsApp (99) 99999-9999"
+        />
+
+        <label style={{ margin: "auto", width: "100%", textAlign: "center" }}>
+          @
+          <input
+            style={{ width: "70%" }}
+            type="text"
+            placeholder="Nome no Instagram"
+            value={instagram}
+            onChange={(e) => setInstagram(e.target.value)}
+          ></input>
+        </label>
 
         <button type="submit">Enviar cadastro</button>
       </form>
