@@ -39,7 +39,7 @@ export default function Cidades() {
             nome={profissional.nome}
             atividade={profissional.atividade}
             cidade={profissional.cidade}
-            numeroWhatsapp={profissional.numeroWhatsapp}
+            numeroWhatsapp={`+55${profissional.numeroWhatsapp}`}
             instagram={profissional.instagram}
           />
         ))}
