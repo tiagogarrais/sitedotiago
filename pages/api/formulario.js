@@ -22,13 +22,13 @@ export default async function Formulario(req, res) {
       const db = client.db(MONGODB_DB);
 
       // Remover caracteres que vem da máscara
-      const whatsAppSemMascara = numeroWhatsapp.replace(/[^\d+]/g, "");
+      const whatsApp = numeroWhatsapp.replace(/[^\d+]/g, "");
 
       // Inserir os dados do formulário na coleção 'profissionais'
       await db.collection("profissionais").insertOne({
         nome,
         atividade,
-        whatsAppSemMascara,
+        whatsApp,
         instagram,
       });
 
