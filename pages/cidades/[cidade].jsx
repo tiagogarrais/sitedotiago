@@ -15,7 +15,7 @@ export default function Cidades() {
     const fetchData = async () => {
       try {
         // Faça sua chamada à API aqui e substitua a URL pela sua
-        const response = await fetch("/api/get-profissionais");
+        const response = await fetch("/api/get-profissionais-brejosanto");
         const data = await response.json();
         setProfissionais(data);
       } catch (error) {
