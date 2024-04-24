@@ -1,12 +1,7 @@
 import { useState } from "react";
+import Image from "next/image";
 
-export default function Profissionais({
-  id,
-  atividade,
-  nome,
-  whatsApp,
-  instagram,
-}) {
+export default function Profissionais({ id, nome, whatsApp, instagram }) {
   const [mostrarDetalhes, setMostrarDetalhes] = useState(false);
   const codigoArea = whatsApp.substring(0, 2);
   const primeiraParteTelefone = whatsApp.substring(2, 7);
@@ -24,20 +19,43 @@ export default function Profissionais({
         </div>
         {mostrarDetalhes && ( // Exibir os detalhes apenas se mostrarDetalhes for true
           <div id={id} className="detalhes">
-            <p>
-              Telefone ({codigoArea}) {primeiraParteTelefone}-
-              {segundaParteTelefone}
-            </p>
             <div className="botoesquadrados">
+              <a
+                target="_blank"
+                href={`tel:${codigoArea}${primeiraParteTelefone}${segundaParteTelefone}`}
+              >
+                <button className="btnquadrado">
+                  <Image
+                    src="/images/telefone.png"
+                    alt="Telefone"
+                    width={40}
+                    height={40}
+                  />{" "}
+                </button>
+              </a>
               <a target="_blank" href={`https://wa.me/+55${whatsApp}`}>
-                <button className="btnquadrado">WhatsApp</button>
+                <button className="btnquadrado">
+                  <Image
+                    src="/images/logo-whatsapp.webp"
+                    alt="Logo WhatsApp"
+                    width={40}
+                    height={40}
+                  />{" "}
+                </button>
               </a>
 
               <a
                 target="_blank"
                 href={`https://www.instagram.com/${instagram}/`}
               >
-                <button className="btnquadrado">Instagram</button>
+                <button className="btnquadrado">
+                  <Image
+                    src="/images/logo-instagram.webp"
+                    alt="Logo Instagram"
+                    width={40}
+                    height={40}
+                  />
+                </button>
               </a>
             </div>
           </div>
