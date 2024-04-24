@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import InputMask from "react-input-mask";
 
 export default function Formulario() {
@@ -7,6 +7,20 @@ export default function Formulario() {
   const [numeroWhatsapp, setNumeroWhatsapp] = useState("");
   const [instagram, setInstagram] = useState("");
   const [cidade, setCidade] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    if (showModal) {
+      // Configurar temporizador para fechar o modal após 7 segundos
+      const timer = setTimeout(() => {
+        setShowModal(false);
+        window.location.reload();
+      }, 7000);
+
+      // Limpar o temporizador ao desmontar o componente
+      return () => clearTimeout(timer);
+    }
+  }, [showModal]);
 
   function handleSubmit(event) {
     event.preventDefault(); // Evitar o comportamento padrão de atualização da página ao enviar o formulário
@@ -20,6 +34,13 @@ export default function Formulario() {
       cidade: cidade,
     };
 
+    // Limpar os campos do formulário
+    setNome("");
+    setAtividade("");
+    setNumeroWhatsapp("");
+    setInstagram("");
+    setCidade("");
+
     // Enviar os dados para o servidor backend via POST
     fetch("/api/formulario", {
       method: "POST",
@@ -32,8 +53,7 @@ export default function Formulario() {
       .then((data) => {
         // Processar a resposta do servidor, se necessário
         console.log("Resposta do servidor:", data);
-        window.alert("Recebemos o seu cadastro!");
-        window.location.reload();
+        setShowModal(true); // Exibe o modal ao receber a resposta do servidor
 
         // Redirecionar o usuário ou exibir uma mensagem de sucesso, etc.
       })
@@ -53,18 +73,21 @@ export default function Formulario() {
         <input
           type="text"
           placeholder="Nome"
+          required
           value={nome}
           onChange={(e) => setNome(e.target.value)}
         ></input>
         <input
           type="text"
           placeholder="Cidade"
+          required
           value={cidade}
           onChange={(e) => setCidade(e.target.value)}
         ></input>
         <input
           type="text"
           placeholder="Profissão ou atividade"
+          required
           value={atividade}
           onChange={(e) => setAtividade(e.target.value)}
         ></input>
@@ -74,6 +97,7 @@ export default function Formulario() {
           maskChar="_"
           id="numeroWhatsapp"
           name="numeroWhatsapp"
+          required
           value={numeroWhatsapp}
           onChange={(e) => setNumeroWhatsapp(e.target.value)}
           placeholder="Número do WhatsApp (99) 99999-9999"
@@ -98,6 +122,19 @@ export default function Formulario() {
           instagram e WhatsApp
         </small>
       </form>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <p>Recebemos o seu cadastro!</p>
+            <p>
+              O alerta será fechado em <span id="countdown">7</span> segundos.
+            </p>
+            <button onClick={() => setShowModal(false)}>Fechar</button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
