@@ -15,7 +15,7 @@ export default async function GetProfissionais(req, res) {
       // Consultar os dados dos profissionais na coleção adequada
       const profissionaisCollection = db.collection("profissionais");
       const profissionais = await profissionaisCollection
-        .find({ slugCidade: "brejosanto" })
+        .find({ slugCidade: "brejosanto", autorizaPublicar: true })
         .sort({ nome: 1 })
         .toArray();
       // Fechar a conexão com o banco de dados
