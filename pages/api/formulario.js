@@ -44,6 +44,7 @@ export default async function Formulario(req, res) {
         instagram,
         cidade,
         slugCidade,
+        autorizaPublicar: false,
       });
 
       // Fechar a conexão com o banco de dados
