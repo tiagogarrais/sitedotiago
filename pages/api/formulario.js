@@ -5,9 +5,9 @@ const { MONGODB_URI, MONGODB_DB } = process.env;
 export default async function Formulario(req, res) {
   if (req.method === "POST") {
     // Verificar se os dados do formulário foram enviados corretamente
-    const { nome, atividade, numeroWhatsapp, instagram } = req.body;
+    const { nome, atividade, numeroWhatsapp, instagram, cidade } = req.body;
 
-    if (!nome || !atividade || !numeroWhatsapp || !instagram) {
+    if (!nome || !atividade || !numeroWhatsapp || !instagram || !cidade) {
       return res
         .status(400)
         .json({ error: "Todos os campos do formulário são obrigatórios." });
@@ -21,8 +21,20 @@ export default async function Formulario(req, res) {
       });
       const db = client.db(MONGODB_DB);
 
-      // Remover caracteres que vem da máscara
+      // Remover caracteres que vêm da máscara
       const whatsApp = numeroWhatsapp.replace(/[^\d+]/g, "");
+
+      function criarSlug(cidade) {
+        // Remove os acentos
+        const semAcentos = cidade
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
+        // Converte para minúsculas e remove espaços
+        const slug = semAcentos.toLowerCase().replace(/\s+/g, "");
+        return slug;
+      }
+
+      const slugCidade = criarSlug(cidade); // Chama a função para obter o slug da cidade
 
       // Inserir os dados do formulário na coleção 'profissionais'
       await db.collection("profissionais").insertOne({
@@ -30,6 +42,8 @@ export default async function Formulario(req, res) {
         atividade,
         whatsApp,
         instagram,
+        cidade,
+        slugCidade,
       });
 
       // Fechar a conexão com o banco de dados
