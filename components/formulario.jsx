@@ -20,7 +20,7 @@ export default function Formulario() {
       cidade: cidade,
     };
 
-    // Enviar os dados para o servidor backend via POST (substitua a URL pela sua URL de endpoint)
+    // Enviar os dados para o servidor backend via POST
     fetch("/api/formulario", {
       method: "POST",
       headers: {
@@ -32,6 +32,9 @@ export default function Formulario() {
       .then((data) => {
         // Processar a resposta do servidor, se necessário
         console.log("Resposta do servidor:", data);
+        window.alert("Recebemos o seu cadastro!");
+        window.location.reload();
+
         // Redirecionar o usuário ou exibir uma mensagem de sucesso, etc.
       })
       .catch((error) => {
