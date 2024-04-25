@@ -52,6 +52,7 @@ export default function Cidades() {
             cidade={profissional.cidade}
             whatsApp={profissional.whatsApp}
             instagram={profissional.instagram}
+            premium={profissional.premium}
           />
         ))}
       </div>
