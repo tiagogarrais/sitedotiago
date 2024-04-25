@@ -45,6 +45,7 @@ export default async function Formulario(req, res) {
         cidade,
         slugCidade,
         autorizaPublicar: false,
+        premium: false,
       });
 
       // Fechar a conexão com o banco de dados
