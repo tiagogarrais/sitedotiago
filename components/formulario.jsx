@@ -8,14 +8,15 @@ export default function Formulario() {
   const [instagram, setInstagram] = useState("");
   const [cidade, setCidade] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [textoBotao, setTextoBotao] = useState("Enviar Cadastro");
 
   useEffect(() => {
     if (showModal) {
-      // Configurar temporizador para fechar o modal após 7 segundos
+      // Configurar temporizador para fechar o modal após 5 segundos
       const timer = setTimeout(() => {
         setShowModal(false);
         window.location.reload();
-      }, 7000);
+      }, 5000);
 
       // Limpar o temporizador ao desmontar o componente
       return () => clearTimeout(timer);
@@ -24,6 +25,7 @@ export default function Formulario() {
 
   function handleSubmit(event) {
     event.preventDefault(); // Evitar o comportamento padrão de atualização da página ao enviar o formulário
+    setTextoBotao("Aguarde...");
 
     // Construir o objeto com os dados do formulário
     const formData = {
@@ -53,7 +55,9 @@ export default function Formulario() {
       .then((data) => {
         // Processar a resposta do servidor, se necessário
         console.log("Resposta do servidor:", data);
-        setShowModal(true); // Exibe o modal ao receber a resposta do servidor
+
+        // Exibe o modal ao receber a resposta do servidor
+        setShowModal(true);
 
         // Redirecionar o usuário ou exibir uma mensagem de sucesso, etc.
       })
@@ -114,7 +118,7 @@ export default function Formulario() {
           ></input>
         </label>
 
-        <button type="submit">Enviar cadastro</button>
+        <button type="submit">{textoBotao}</button>
 
         <small>A publicação básica é gratuita!</small>
         <small>
@@ -123,16 +127,10 @@ export default function Formulario() {
         </small>
       </form>
 
-      {/* Modal */}
       {showModal && (
         <div className="modal">
-          <div className="modal-content">
-            <p>Recebemos o seu cadastro!</p>
-            <p>
-              O alerta será fechado em <span id="countdown">7</span> segundos.
-            </p>
-            <button onClick={() => setShowModal(false)}>Fechar</button>
-          </div>
+          <p>Recebemos o seu cadastro!</p>
+          <p>Vamos recarregar a página em 5 segundos.</p>
         </div>
       )}
     </>
