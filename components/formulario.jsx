@@ -12,11 +12,11 @@ export default function Formulario() {
 
   useEffect(() => {
     if (showModal) {
-      // Configurar temporizador para fechar o modal após 5 segundos
+      // Configurar temporizador para fechar o modal após 10 segundos
       const timer = setTimeout(() => {
         setShowModal(false);
         window.location.reload();
-      }, 5000);
+      }, 10000);
 
       // Limpar o temporizador ao desmontar o componente
       return () => clearTimeout(timer);
@@ -121,16 +121,15 @@ export default function Formulario() {
         <button type="submit">{textoBotao}</button>
 
         <small>A publicação básica é gratuita!</small>
-        <small>
-          Publicação completa custa R$20,00 e inclui links diretos para
-          instagram e WhatsApp
-        </small>
+        <small>A Publicação completa custa R$20,00. (Taxa única)</small>
       </form>
 
       {showModal && (
         <div className="modal">
           <p>Recebemos o seu cadastro!</p>
-          <p>Vamos recarregar a página em 5 segundos.</p>
+          <p>
+            Entraremos em contato no WhatsApp para confirmar as informações!
+          </p>
         </div>
       )}
     </>
