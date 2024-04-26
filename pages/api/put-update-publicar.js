@@ -33,7 +33,6 @@ export default async function PutUpdatePublicar(req, res) {
     }
 
     // Obtenha os parâmetros da solicitação
-    console.log(req.body);
     const { _id, autorizaPublicar } = req.body;
 
     // Conectar ao banco de dados MongoDB
