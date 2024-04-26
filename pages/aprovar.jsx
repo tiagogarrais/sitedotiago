@@ -42,6 +42,28 @@ export default function Aprovar() {
     }
   };
 
+  const inverterPremium = async (_id, premium) => {
+    try {
+      // Faz a requisição PUT
+      const response = await fetch("/api/put-update-premium", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ _id, premium: !premium }),
+      });
+
+      if (response.ok) {
+        // Atualiza o estado local de profissionais com o novo valor autorizaPublicar
+        fetchData();
+      } else {
+        console.error("Erro ao realizar a atualização:", await response.text());
+      }
+    } catch (error) {
+      console.error("Erro ao realizar a requisição:", error);
+    }
+  };
+
   if (session) {
     return (
       <>
@@ -71,6 +93,17 @@ export default function Aprovar() {
                     {profissional.autorizaPublicar
                       ? "Remover Publicação"
                       : "Publicar"}
+                  </button>
+                </p>
+                <p>
+                  <button
+                    onClick={() =>
+                      inverterPremium(profissional._id, profissional.premium)
+                    }
+                  >
+                    {profissional.premium
+                      ? "Remover Premium"
+                      : "Tornar Premium"}
                   </button>
                 </p>
               </div>
