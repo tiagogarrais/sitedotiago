@@ -23,13 +23,36 @@ export default function Profissionais({
               target="_blank"
               href={`tel:${codigoArea}${primeiraParteTelefone}${segundaParteTelefone}`}
             >
-              <button>Telefone</button>
+              <button>
+                <Image
+                  src="/images/telefone.png"
+                  width={30}
+                  height={30}
+                  alt="Ligar"
+                ></Image>
+              </button>
             </a>
             <a target="_blank" href={`https://wa.me/+55${whatsApp}`}>
-              <button>WhatsApp</button>
+              <button>
+                {" "}
+                <Image
+                  src="/images/logo-whatsapp.webp"
+                  width={30}
+                  height={30}
+                  alt="Ligar"
+                ></Image>
+              </button>
             </a>
             <a target="_blank" href={`https://www.instagram.com/${instagram}/`}>
-              <button>Instagram</button>
+              <button>
+                {" "}
+                <Image
+                  src="/images/logo-instagram.webp"
+                  width={30}
+                  height={30}
+                  alt="Instagram"
+                ></Image>
+              </button>
             </a>
           </div>
         ) : (
@@ -39,7 +62,15 @@ export default function Profissionais({
               target="_blank"
               href={`tel:${codigoArea}${primeiraParteTelefone}${segundaParteTelefone}`}
             >
-              <button>Telefone</button>
+              <button>
+                {" "}
+                <Image
+                  src="/images/telefone.png"
+                  width={30}
+                  height={30}
+                  alt="Ligar"
+                ></Image>
+              </button>
             </a>
           </div>
         )}
