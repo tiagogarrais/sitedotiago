@@ -80,7 +80,17 @@ export default function Aprovar() {
                 <p>Atividade: {profissional.atividade}</p>
                 <p>Cidade: {profissional.cidade}</p>
                 <p>WhatsApp: {profissional.whatsApp}</p>
-                <p>Instagram: {profissional.instagram}</p>
+
+                <p>
+                  Instagram:{" "}
+                  <a
+                    target="_blank"
+                    href={`https://www.instagram.com/${profissional.instagram}`}
+                  >
+                    {profissional.instagram}
+                  </a>
+                </p>
+
                 <p>
                   <button
                     onClick={() =>
