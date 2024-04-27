@@ -12,6 +12,8 @@ export default function Profissionais({
   const primeiraParteTelefone = whatsApp.substring(2, 7);
   const segundaParteTelefone = whatsApp.substring(7, 11);
 
+  const tamanhoIcone = 24;
+
   return (
     <>
       <article>
@@ -26,8 +28,8 @@ export default function Profissionais({
               <button>
                 <Image
                   src="/images/telefone.png"
-                  width={30}
-                  height={30}
+                  width={tamanhoIcone}
+                  height={tamanhoIcone}
                   alt="Ligar"
                 ></Image>
               </button>
@@ -37,8 +39,8 @@ export default function Profissionais({
                 {" "}
                 <Image
                   src="/images/logo-whatsapp.webp"
-                  width={30}
-                  height={30}
+                  width={tamanhoIcone}
+                  height={tamanhoIcone}
                   alt="Ligar"
                 ></Image>
               </button>
@@ -48,8 +50,8 @@ export default function Profissionais({
                 {" "}
                 <Image
                   src="/images/logo-instagram.webp"
-                  width={30}
-                  height={30}
+                  width={tamanhoIcone}
+                  height={tamanhoIcone}
                   alt="Instagram"
                 ></Image>
               </button>
@@ -66,8 +68,8 @@ export default function Profissionais({
                 {" "}
                 <Image
                   src="/images/telefone.png"
-                  width={30}
-                  height={30}
+                  width={tamanhoIcone}
+                  height={tamanhoIcone}
                   alt="Ligar"
                 ></Image>
               </button>
