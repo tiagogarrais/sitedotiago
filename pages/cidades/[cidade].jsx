@@ -62,6 +62,13 @@ export default function Cidades() {
   return (
     <div>
       <h1>Empresas e profissionais de Brejo Santo</h1>
+      <div className="principal centralizada">
+        <blockquote>
+          Quero construir nesse site o maior catálogo de empresas e
+          profissionais autônomos da cidade!
+          <footer>- Adm. Tiago Arrais CRA 11.660</footer>
+        </blockquote>
+      </div>
       <div className="principal">{renderProfissionaisPorAtividade()}</div>
       <Formulario />
 
