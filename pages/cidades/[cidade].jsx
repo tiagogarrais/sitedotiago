@@ -72,25 +72,6 @@ export default function Cidades() {
       <div className="principal">{renderProfissionaisPorAtividade()}</div>
       <Formulario />
 
-      <div className="principal">
-        <h2>Como ativar o WhatsApp e Instagram da sua loja?</h2>
-
-        <p>1. Faça um PIX de R$ 20,00 - PIX 88997230866;</p>
-        <p>
-          2. Envie o comprovante para o
-          <a target="_blank" href={`https://wa.me/+5588997230866`}>
-            {" "}
-            nosso WhatsApp
-          </a>
-        </p>
-        <p>3. Informe o seu WhatsApp e o @ do Instagram</p>
-
-        <p>
-          Com os botões, seus clientes podem ir direto para a sua empresa. Boas
-          vendas!
-        </p>
-      </div>
-
       <div className="centralizada">
         <small>https://sitedotiago.com.br/cidades/{cidade}</small>
         <small>Site desenvolvido por Adm. Tiago Arrais</small>
