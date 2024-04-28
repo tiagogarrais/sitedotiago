@@ -69,11 +69,8 @@ export default function Formulario() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <div className="centralizada">
-          <h2>Quer fazer parte da nossa lista?</h2>
-        </div>
-        <h3>Cadastro</h3>
+      <form className="principal" onSubmit={handleSubmit}>
+        <h2>Envie aqui o seu cadastro</h2>
         <input
           type="text"
           placeholder="Nome"
@@ -122,8 +119,6 @@ export default function Formulario() {
         </label>
 
         <button type="submit">{textoBotao}</button>
-
-        <small>A publicação é gratuita!</small>
       </form>
 
       {showModal && (
