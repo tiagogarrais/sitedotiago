@@ -45,17 +45,21 @@ export default function Profissionais({
                 ></Image>
               </button>
             </a>
-            <a target="_blank" href={`https://www.instagram.com/${instagram}/`}>
-              <button>
-                {" "}
-                <Image
-                  src="/images/logo-instagram.webp"
-                  width={tamanhoIcone}
-                  height={tamanhoIcone}
-                  alt="Instagram"
-                ></Image>
-              </button>
-            </a>
+            {instagram && (
+              <a
+                target="_blank"
+                href={`https://www.instagram.com/${instagram}/`}
+              >
+                <button>
+                  <Image
+                    src="/images/logo-instagram.webp"
+                    width={tamanhoIcone}
+                    height={tamanhoIcone}
+                    alt="Instagram"
+                  />
+                </button>
+              </a>
+            )}
           </div>
         ) : (
           // Exibir apenas o telefone para não premium
