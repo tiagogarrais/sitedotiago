@@ -114,8 +114,11 @@ export default function Formulario() {
             type="text"
             placeholder="Nome no Instagram"
             value={instagram}
-            onChange={(e) => setInstagram(e.target.value)}
-          ></input>
+            onChange={(e) => {
+              const text = e.target.value.toLowerCase().replace(/\s/g, ""); // Converte para minúsculas e remove espaços
+              setInstagram(text);
+            }}
+          />
         </label>
 
         <button type="submit">{textoBotao}</button>
@@ -128,7 +131,8 @@ export default function Formulario() {
         <div className="modal">
           <p>Recebemos o seu cadastro!</p>
           <p>
-            Entraremos em contato no WhatsApp para confirmar as informações!
+            Nas próximas 24h entraremos em contato no WhatsApp para confirmar as
+            informações!
           </p>
         </div>
       )}
