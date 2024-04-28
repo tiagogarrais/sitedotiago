@@ -69,8 +69,11 @@ export default function Cidades() {
           <footer>- Adm. Tiago Arrais CRA 11.660</footer>
         </blockquote>
       </div>
-      <div className="principal">{renderProfissionaisPorAtividade()}</div>
       <Formulario />
+      <div className="principal">
+        <h2>Empresas cadastradas</h2>
+        {renderProfissionaisPorAtividade()}
+      </div>
 
       <div className="centralizada">
         <small>https://sitedotiago.com.br/cidades/{cidade}</small>
