@@ -115,16 +115,15 @@ export default function Formulario() {
             placeholder="Nome no Instagram"
             value={instagram}
             onChange={(e) => {
-              const text = e.target.value.toLowerCase().replace(/\s/g, ""); // Converte para minúsculas e remove espaços
-              setInstagram(text);
+              const textInsta = e.target.value.toLowerCase().replace(/\s/g, ""); // Converte para minúsculas e remove espaços
+              setInstagram(textInsta);
             }}
           />
         </label>
 
         <button type="submit">{textoBotao}</button>
 
-        <small>A publicação básica é gratuita!</small>
-        <small>A Publicação completa custa R$20,00. (Taxa única)</small>
+        <small>A publicação é gratuita!</small>
       </form>
 
       {showModal && (
