@@ -12,7 +12,7 @@ export default function Profissionais({
   const primeiraParteTelefone = whatsApp.substring(2, 7);
   const segundaParteTelefone = whatsApp.substring(7, 11);
 
-  const tamanhoIcone = 24;
+  const tamanhoIcone = 18;
 
   return (
     <>
