@@ -6,7 +6,7 @@ export default function Formulario() {
   const [atividade, setAtividade] = useState("");
   const [numeroWhatsapp, setNumeroWhatsapp] = useState("");
   const [instagram, setInstagram] = useState("");
-  const [cidade, setCidade] = useState("");
+  const [cidade, setCidade] = useState("Brejo Santo");
   const [showModal, setShowModal] = useState(false);
   const [textoBotao, setTextoBotao] = useState("Enviar Cadastro");
 
@@ -15,7 +15,7 @@ export default function Formulario() {
       // Configurar temporizador para fechar o modal após 10 segundos
       const timer = setTimeout(() => {
         setShowModal(false);
-        window.location.reload();
+        window.location.href = "/";
       }, 10000);
 
       // Limpar o temporizador ao desmontar o componente
@@ -101,7 +101,7 @@ export default function Formulario() {
           required
           value={numeroWhatsapp}
           onChange={(e) => setNumeroWhatsapp(e.target.value)}
-          placeholder="Número do WhatsApp (99) 99999-9999"
+          placeholder="WhatsApp (99) 99999-9999"
         />
 
         <label style={{ margin: "auto", width: "100%", textAlign: "center" }}>
@@ -124,10 +124,7 @@ export default function Formulario() {
       {showModal && (
         <div className="modal">
           <p>Recebemos o seu cadastro!</p>
-          <p>
-            Nas próximas 24h entraremos em contato no WhatsApp para confirmar as
-            informações!
-          </p>
+          <p>Publicaremos em no máximo 24h</p>
         </div>
       )}
     </>
