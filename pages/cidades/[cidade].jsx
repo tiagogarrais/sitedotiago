@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Profissionais from "../../components/profissionais";
 import Formulario from "../../components/formulario";
+import Link from "next/link";
 
 export default function Cidades() {
   const router = useRouter();
@@ -69,7 +70,9 @@ export default function Cidades() {
           <footer>- Adm. Tiago Arrais CRA 11.660</footer>
         </blockquote>
       </div>
-      <Formulario />
+      <Link href="/cidades/cadastrar">
+        <button class="botao-flutuante">Cadastre aqui a sua atividade</button>
+      </Link>
       <div className="principal">
         <h2>Empresas cadastradas</h2>
         {renderProfissionaisPorAtividade()}
