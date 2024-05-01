@@ -70,7 +70,7 @@ export default function Formulario() {
   return (
     <>
       <form className="principal" onSubmit={handleSubmit}>
-        <h2>Envie aqui o seu cadastro</h2>
+        <h2>Cadastro</h2>
         <input
           type="text"
           placeholder="Nome"
