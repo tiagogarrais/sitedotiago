@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Profissionais from "../../components/profissionais";
-import Formulario from "../../components/formulario";
 import Link from "next/link";
 
 export default function Cidades() {
