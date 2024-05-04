@@ -10,13 +10,9 @@ export default function App({
   return (
     <SessionProvider session={session}>
       <Head>
-        <title>Este é o site do Tiago!</title>
+        <title>O maior catálogo de empresas da cidade!</title>
         <meta name="author" content="Tiago das Graças Arrais" />
         <meta name="Catálogo com empresas e profissionais autônomos" />
-        <meta
-          name="facebook-domain-verification"
-          content="uvlhr3usvrc5ct1jn1z2dlvwyavavj"
-        />
       </Head>
       <Cabecalho />
       <Component {...pageProps} />
