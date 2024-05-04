@@ -46,7 +46,9 @@ export default function Cabecalho() {
 
   return (
     <div className="cabecalho">
-      <Contador visitCount={visitCount} />
+      <small className="centralizada">
+        <Contador visitCount={visitCount} />
+      </small>
       <a
         href="/"
         style={{
@@ -56,7 +58,6 @@ export default function Cabecalho() {
           height: "100%",
         }}
       >
-        {" "}
         <Image
           className="logomarca"
           src="/images/logomarca.jpeg"
@@ -65,6 +66,21 @@ export default function Cabecalho() {
           alt="Logomarca do SiteDoTiago.com.br"
         />
       </a>
+      <p className="centralizada">
+        <h3>Siga-nos nas redes sociais</h3>
+        <a target="_blank" href="https://www.instagram.com/admprogramador">
+          <Image
+            src="/images/logo-instagram.webp"
+            width={25}
+            height={25}
+          ></Image>
+          /admprogramador
+        </a>
+        <a target="_blank" href="https://www.facebook.com/admprogramador">
+          <Image src="/images/logo-facebook.png" width={25} height={25}></Image>
+          /admprogramador
+        </a>
+      </p>
     </div>
   );
 }
