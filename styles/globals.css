@@ -182,7 +182,7 @@ form button:hover {
 
 .botao-flutuante {
   position: fixed;
-  bottom: 30px; /* Distância do botão em relação à parte inferior da tela */
+  bottom: 55px; /* Distância do botão em relação à parte inferior da tela */
   left: 50%; /* Posiciona o botão na metade da tela */
   transform: translateX(
     -50%
@@ -199,4 +199,19 @@ form button:hover {
 
 .botao-flutuante:hover {
   background-color: #0056b3; /* Altera a cor de fundo ao passar o mouse sobre o botão */
+}
+
+.topic {
+  border-collapse: collapse;
+  width: 98%;
+}
+
+.topic th,
+.topic td {
+  border-bottom: 1px solid #ddd;
+  padding: 2px;
+}
+
+.topic td:first-child {
+  width: 45px; /* Defina a largura desejada */
 }
