@@ -66,7 +66,7 @@ export default function Cabecalho() {
           alt="Logomarca do SiteDoTiago.com.br"
         />
       </a>
-      <p className="centralizada">
+      <div className="centralizada">
         <h3>Siga-nos nas redes sociais</h3>
         <a target="_blank" href="https://www.instagram.com/admprogramador">
           <Image
@@ -80,7 +80,7 @@ export default function Cabecalho() {
           <Image src="/images/logo-facebook.png" width={25} height={25}></Image>
           /admprogramador
         </a>
-      </p>
+      </div>
     </div>
   );
 }
