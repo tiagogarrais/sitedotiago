@@ -68,9 +68,8 @@ export default function Cidades() {
       <h1>Brejo Santo</h1>
       <div className="principal centralizada">
         <Link href="/cidades/brejosanto/topic">
-          <h2>Transporte alternativo - Consultar horários</h2>
-          <Image src="/images/logo-cooptasce.jpg" height={120} width={200} />
-          <Image src="/images/cooptasce-zenir.jpg" height={120} width={200} />
+          <Image src="/images/logo-cooptasce.jpg" height={150} width={330} />
+          <h4>Consultar horários das Vans</h4>
         </Link>
       </div>
       <div className="principal">{renderProfissionaisPorAtividade()}</div>
