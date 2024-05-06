@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Profissionais from "../../../components/profissionais";
+import Image from "next/image";
 
 export default function Cidades() {
   // Estado para armazenar os dados dos profissionais
@@ -57,23 +58,28 @@ export default function Cidades() {
 
   return (
     <div>
-      <h1>Empresas e profissionais de Brejo Santo</h1>
       <div className="principal centralizada">
         <blockquote>
           Estou construindo o maior catálogo de empresas e profissionais
           autônomos da cidade!
-          <footer>- Adm. Tiago Arrais CRA 11.660</footer>
+          <footer> Adm. Tiago Arrais CRA 11.660</footer>
         </blockquote>
       </div>
+      <h1>Brejo Santo</h1>
+      <div className="principal centralizada">
+        <Link href="/cidades/brejosanto/topic">
+          <h2>Transporte alternativo - Consultar horários</h2>
+          <Image src="/images/logo-cooptasce.jpg" height={120} width={200} />
+          <Image src="/images/cooptasce-zenir.jpg" height={120} width={200} />
+        </Link>
+      </div>
+      <div className="principal">{renderProfissionaisPorAtividade()}</div>
+
       <Link href="/cidades/cadastro">
         <button className="botao-flutuante">
           Cadastre aqui a sua atividade
         </button>
       </Link>
-      <div className="principal">
-        <h2>Empresas cadastradas</h2>
-        {renderProfissionaisPorAtividade()}
-      </div>
 
       {/* Rodapé da página */}
       <div className="centralizada">
