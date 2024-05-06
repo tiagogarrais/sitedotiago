@@ -46,7 +46,14 @@ export default function HorariosTopic() {
   return (
     <>
       <h1>Transporte Alternativo - Horários</h1>
-      <h2>Brejo Santo ➜ Juazeiro do Norte</h2>
+      <div className="principal centralizada">
+        <h4>Origem: Brejo Santo</h4>
+        <h4>Destino: Juazeiro do Norte</h4>
+        <p>Local: Em frente à Zenir Móveis</p>
+      </div>
+      <div className="principal centralizada">
+        <Image src="/images/cooptasce-zenir.jpg" height={210} width={340} />
+      </div>
       <table className="topic">
         <tbody>
           <tr>
