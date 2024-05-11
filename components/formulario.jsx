@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import InputMask from "react-input-mask";
+import { useRouter } from "next/router";
 
 export default function Formulario() {
+  const router = useRouter();
   const [nome, setNome] = useState("");
   const [atividade, setAtividade] = useState("");
   const [numeroWhatsapp, setNumeroWhatsapp] = useState("");
@@ -12,6 +14,11 @@ export default function Formulario() {
   const [aviso, setAviso] = useState("");
 
   useEffect(() => {
+    // Verifica se atividade está presente nos parâmetros da URL
+    if (router.query.atividade) {
+      setAtividade(router.query.atividade);
+    }
+
     if (showModal) {
       // Configurar temporizador para fechar o modal após 10 segundos
       const timer = setTimeout(() => {
@@ -22,7 +29,7 @@ export default function Formulario() {
       // Limpar o temporizador ao desmontar o componente
       return () => clearTimeout(timer);
     }
-  }, [showModal]);
+  }, [router.query.atividade, showModal]);
 
   function handleSubmit(event) {
     event.preventDefault(); // Evitar o comportamento padrão de atualização da página ao enviar o formulário
@@ -79,7 +86,7 @@ export default function Formulario() {
   return (
     <>
       <form className="principal" onSubmit={handleSubmit}>
-        <h2>Cadastro</h2>
+        <h2>Cadastrando em Brejo Santo-CE</h2>
         <input
           type="text"
           placeholder="Nome"
@@ -87,13 +94,7 @@ export default function Formulario() {
           value={nome}
           onChange={(e) => setNome(e.target.value)}
         ></input>
-        <input
-          type="text"
-          placeholder="Cidade"
-          required
-          value={cidade}
-          onChange={(e) => setCidade(e.target.value)}
-        ></input>
+
         <input
           type="text"
           placeholder="Profissão ou atividade"
