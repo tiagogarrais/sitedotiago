@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Profissionais from "../../../components/profissionais";
 import Image from "next/image";
+import Rodape from "../../../components/rodape";
 
 export default function Cidades() {
   // Estado para armazenar os dados dos profissionais
@@ -45,7 +46,9 @@ export default function Cidades() {
             {" "}
             <Link href={`/cidades/cadastro?atividade=${atividade}`}>
               {" "}
-              <button className="botao">Cadastre outro(a)</button>
+              <button className="botao-alinhado-esquerda">
+                Cadastre outro(a)
+              </button>
             </Link>
           </p>
         </div>{" "}
@@ -83,20 +86,7 @@ export default function Cidades() {
       </div>
       <div className="principal">{renderProfissionaisPorAtividade()}</div>
 
-      <Link href="/cidades/cadastro">
-        <button className="botao-flutuante">
-          Cadastre aqui a sua atividade
-        </button>
-      </Link>
-
-      {/* Rodapé da página */}
-      <div className="centralizada">
-        <p></p>
-        <p></p>
-        <small>https://sitedotiago.com.br/cidades/brejosanto</small>
-        <small>Site desenvolvido por Adm. Tiago Arrais</small>
-        <small>2024</small>
-      </div>
+      <Rodape />
     </div>
   );
 }
