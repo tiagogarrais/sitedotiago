@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Contador from "../components/contador";
+import Link from "next/link";
 
 export default function Cabecalho() {
   const [visitCount, setVisitCount] = useState(0);
@@ -49,7 +50,7 @@ export default function Cabecalho() {
       <small className="centralizada">
         <Contador visitCount={visitCount} />
       </small>
-      <a
+      <Link
         href="/"
         style={{
           display: "flex",
@@ -65,10 +66,14 @@ export default function Cabecalho() {
           height={355}
           alt="Logomarca do SiteDoTiago.com.br"
         />
-      </a>
+      </Link>
       <div className="centralizada">
         <h3>Siga-nos nas redes sociais</h3>
-        <a target="_blank" href="https://www.instagram.com/admprogramador">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://www.instagram.com/admprogramador"
+        >
           <Image
             src="/images/logo-instagram.webp"
             width={25}
@@ -76,7 +81,11 @@ export default function Cabecalho() {
           ></Image>
           /admprogramador
         </a>
-        <a target="_blank" href="https://www.facebook.com/admprogramador">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://www.facebook.com/admprogramador"
+        >
           <Image src="/images/logo-facebook.png" width={25} height={25}></Image>
           /admprogramador
         </a>
