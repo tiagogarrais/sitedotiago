@@ -215,3 +215,8 @@ form button:hover {
 .topic td:first-child {
   width: 45px; /* Defina a largura desejada */
 }
+
+#aviso {
+  background-color: yellow;
+  color: #000;
+}

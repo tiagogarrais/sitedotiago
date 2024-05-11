@@ -9,6 +9,7 @@ export default function Formulario() {
   const [cidade, setCidade] = useState("Brejo Santo");
   const [showModal, setShowModal] = useState(false);
   const [textoBotao, setTextoBotao] = useState("Enviar Cadastro");
+  const [aviso, setAviso] = useState("");
 
   useEffect(() => {
     if (showModal) {
@@ -26,6 +27,14 @@ export default function Formulario() {
   function handleSubmit(event) {
     event.preventDefault(); // Evitar o comportamento padrão de atualização da página ao enviar o formulário
     setTextoBotao("Aguarde...");
+
+    if (!numeroWhatsapp && !instagram) {
+      setTextoBotao("Corrigir e enviar cadastro");
+      setAviso("Informe WhatsApp ou Instagram");
+      return;
+    }
+
+    setAviso("");
 
     // Construir o objeto com os dados do formulário
     const formData = {
@@ -98,7 +107,6 @@ export default function Formulario() {
           maskChar="_"
           id="numeroWhatsapp"
           name="numeroWhatsapp"
-          required
           value={numeroWhatsapp}
           onChange={(e) => setNumeroWhatsapp(e.target.value)}
           placeholder="WhatsApp (99) 99999-9999"
@@ -118,6 +126,9 @@ export default function Formulario() {
           />
         </label>
 
+        <div id="aviso" className="centralizada">
+          {aviso}
+        </div>
         <button type="submit">{textoBotao}</button>
       </form>
 
