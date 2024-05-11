@@ -39,7 +39,16 @@ export default function Cidades() {
 
     return categoriasOrdenadas.map((atividade) => (
       <div key={atividade}>
-        <h3>{atividade}</h3>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <h3>{atividade}</h3>
+          <p style={{ marginLeft: "10px" }}>
+            {" "}
+            <Link href={`/cidades/cadastro?atividade=${atividade}`}>
+              {" "}
+              <button className="botao">Cadastre outro(a)</button>
+            </Link>
+          </p>
+        </div>{" "}
         {profissionaisPorAtividade[atividade].map((profissional) => (
           <Profissionais
             key={profissional.id}
