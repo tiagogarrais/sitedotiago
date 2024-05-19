@@ -8,9 +8,9 @@ export default function Profissionais({
   instagram,
   premium,
 }) {
-  const codigoArea = whatsApp.substring(0, 2);
-  const primeiraParteTelefone = whatsApp.substring(2, 7);
-  const segundaParteTelefone = whatsApp.substring(7, 11);
+  const codigoArea = whatsApp ? whatsApp.substring(0, 2) : "";
+  const primeiraParteTelefone = whatsApp ? whatsApp.substring(2, 7) : "";
+  const segundaParteTelefone = whatsApp ? whatsApp.substring(7, 11) : "";
 
   const tamanhoIcone = 18;
 
@@ -21,30 +21,35 @@ export default function Profissionais({
         {premium ? (
           // Exibir informações premium (WhatsApp, Instagram e telefone)
           <div className="premium">
-            <a
-              target="_blank"
-              href={`tel:${codigoArea}${primeiraParteTelefone}${segundaParteTelefone}`}
-            >
-              <button>
-                <Image
-                  src="/images/telefone.png"
-                  width={tamanhoIcone}
-                  height={tamanhoIcone}
-                  alt="Ligar"
-                ></Image>
-              </button>
-            </a>
-            <a target="_blank" href={`https://wa.me/+55${whatsApp}`}>
-              <button>
-                {" "}
-                <Image
-                  src="/images/logo-whatsapp.webp"
-                  width={tamanhoIcone}
-                  height={tamanhoIcone}
-                  alt="Ligar"
-                ></Image>
-              </button>
-            </a>
+            {whatsApp && (
+              <>
+                <a
+                  target="_blank"
+                  href={`tel:${codigoArea}${primeiraParteTelefone}${segundaParteTelefone}`}
+                >
+                  <button>
+                    <Image
+                      src="/images/telefone.png"
+                      width={tamanhoIcone}
+                      height={tamanhoIcone}
+                      alt="Fazer uma ligação telefônica"
+                      role="img"
+                    ></Image>
+                  </button>
+                </a>
+                <a target="_blank" href={`https://wa.me/+55${whatsApp}`}>
+                  <button>
+                    <Image
+                      src="/images/logo-whatsapp.webp"
+                      width={tamanhoIcone}
+                      height={tamanhoIcone}
+                      alt="Mandar mensagem no WhatsApp"
+                      role="img"
+                    ></Image>
+                  </button>
+                </a>
+              </>
+            )}
             {instagram && (
               <a
                 target="_blank"
@@ -55,7 +60,8 @@ export default function Profissionais({
                     src="/images/logo-instagram.webp"
                     width={tamanhoIcone}
                     height={tamanhoIcone}
-                    alt="Instagram"
+                    alt="Acessar o Instagram"
+                    role="img"
                   />
                 </button>
               </a>
@@ -64,20 +70,22 @@ export default function Profissionais({
         ) : (
           // Exibir apenas o telefone para não premium
           <div className="basico">
-            <a
-              target="_blank"
-              href={`tel:${codigoArea}${primeiraParteTelefone}${segundaParteTelefone}`}
-            >
-              <button>
-                {" "}
-                <Image
-                  src="/images/telefone.png"
-                  width={tamanhoIcone}
-                  height={tamanhoIcone}
-                  alt="Ligar"
-                ></Image>
-              </button>
-            </a>
+            {whatsApp && (
+              <a
+                target="_blank"
+                href={`tel:${codigoArea}${primeiraParteTelefone}${segundaParteTelefone}`}
+              >
+                <button>
+                  <Image
+                    src="/images/telefone.png"
+                    width={tamanhoIcone}
+                    height={tamanhoIcone}
+                    alt="Fazer uma ligação telefônica"
+                    role="img"
+                  ></Image>
+                </button>
+              </a>
+            )}
           </div>
         )}
       </article>
