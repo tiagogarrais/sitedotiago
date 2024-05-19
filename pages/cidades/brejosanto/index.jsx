@@ -1,30 +1,9 @@
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Profissionais from "../../../components/profissionais";
 import Image from "next/image";
 import Rodape from "../../../components/rodape";
 
-export default function Cidades() {
-  // Estado para armazenar os dados dos profissionais
-  const [profissionais, setProfissionais] = useState([]);
-
-  useEffect(() => {
-    // Função para buscar dados dos profissionais da API
-    const fetchData = async () => {
-      try {
-        // Faça sua chamada à API aqui e substitua a URL pela sua
-        const response = await fetch("/api/get-profissionais-brejosanto");
-        const data = await response.json();
-        setProfissionais(data);
-      } catch (error) {
-        console.error("Erro ao buscar dados dos profissionais:", error);
-      }
-    };
-
-    // Chamada da função para buscar os dados dos profissionais ao montar o componente
-    fetchData();
-  }, []); // Executa apenas uma vez ao montar o componente
-
+export default function Cidades({ profissionais }) {
   // Renderização dos profissionais agrupados por atividade e ordenados alfabeticamente
   const renderProfissionaisPorAtividade = () => {
     const profissionaisPorAtividade = {};
@@ -43,15 +22,13 @@ export default function Cidades() {
         <div style={{ display: "flex", alignItems: "center" }}>
           <h3>{atividade}</h3>
           <p style={{ marginLeft: "10px" }}>
-            {" "}
             <Link href={`/cidades/cadastro?atividade=${atividade}`}>
-              {" "}
               <button className="botao-alinhado-esquerda">
                 Cadastre outro(a)
               </button>
             </Link>
           </p>
-        </div>{" "}
+        </div>
         {profissionaisPorAtividade[atividade].map((profissional) => (
           <Profissionais
             key={profissional.id}
@@ -82,4 +59,43 @@ export default function Cidades() {
       <Rodape />
     </div>
   );
+}
+
+// Adicione o getStaticProps
+import { MongoClient } from "mongodb";
+
+export async function getStaticProps() {
+  const { MONGODB_URI, MONGODB_DB } = process.env;
+
+  try {
+    // Conectar ao banco de dados MongoDB
+    const client = await MongoClient.connect(MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    const db = client.db(MONGODB_DB);
+
+    // Consultar os dados dos profissionais na coleção adequada
+    const profissionaisCollection = db.collection("profissionais");
+    const profissionais = await profissionaisCollection
+      .find({ slugCidade: "brejosanto", autorizaPublicar: true })
+      .sort({ nome: 1 })
+      .toArray();
+    // Fechar a conexão com o banco de dados
+    await client.close();
+
+    return {
+      props: {
+        profissionais: JSON.parse(JSON.stringify(profissionais)), // Corrige o erro de serialização do Next.js
+      },
+      revalidate: 1800, // Revalida a cada 30 minutos
+    };
+  } catch (error) {
+    console.error("Erro ao obter dados dos profissionais:", error);
+    return {
+      props: {
+        profissionais: [],
+      },
+    };
+  }
 }
