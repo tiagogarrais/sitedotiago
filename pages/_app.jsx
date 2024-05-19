@@ -10,7 +10,9 @@ export default function App({
   return (
     <SessionProvider session={session}>
       <Head>
-        <title>O maior catálogo de empresas da cidade!</title>
+        <title>
+          Este é o guia comercial com o maior catálogo de empresas da cidade!
+        </title>
         <meta name="author" content="Tiago das Graças Arrais" />
         <meta name="Catálogo com empresas e profissionais autônomos" />
       </Head>
