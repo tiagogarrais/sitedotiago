@@ -70,13 +70,6 @@ export default function Cidades() {
 
   return (
     <div>
-      <div className="principal centralizada">
-        <blockquote>
-          Estou construindo o maior catálogo de empresas e profissionais
-          autônomos da cidade!
-          <footer> Adm. Tiago Arrais CRA 11.660</footer>
-        </blockquote>
-      </div>
       <h1>Brejo Santo</h1>
       <div className="principal centralizada">
         <Link href="/cidades/brejosanto/topic">
