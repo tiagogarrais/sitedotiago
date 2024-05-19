@@ -50,6 +50,14 @@ export default function Cabecalho() {
       <small className="centralizada">
         <Contador visitCount={visitCount} />
       </small>
+
+      <div className="principal centralizada">
+        <blockquote>
+          Estou construindo um guia comercial com o maior catálogo de empresas e
+          profissionais autônomos da cidade!
+          <footer> Adm. Tiago Arrais CRA 11.660</footer>
+        </blockquote>
+      </div>
       <Link
         href="/"
         style={{
@@ -62,8 +70,8 @@ export default function Cabecalho() {
         <Image
           className="logomarca"
           src="/images/logomarca.jpeg"
-          width={355}
-          height={355}
+          width={255}
+          height={255}
           alt="Logomarca do SiteDoTiago.com.br"
         />
       </Link>
