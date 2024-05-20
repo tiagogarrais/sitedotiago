@@ -41,6 +41,7 @@ export default function Cidades({ profissionais }) {
             premium={profissional.premium}
           />
         ))}
+        <div className="banner">Anuncie aqui</div>
       </div>
     ));
   };
