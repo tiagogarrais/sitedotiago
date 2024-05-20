@@ -1,46 +1,72 @@
 import Image from "next/image";
 
-const valter = "Valter";
-const telValter = 88981187106;
+const drivers = [
+  { name: "Valter", phone: 88981187106 },
+  { name: "Valmira", phone: 88999332142 },
+  { name: "Napoleão", phone: 88999295583 },
+  { name: "Jaime", phone: 88998466265 },
+  { name: "João Paulo", phone: 88999610046 },
+  { name: "Antonio", phone: 88998034410 },
+  { name: "Ademir", phone: 88997791191 },
+  { name: "C.Gerônimo", phone: 88996140412 },
+  { name: "Eduardo", phone: 88996341211 },
+  { name: "Berson", phone: 88999745019 },
+  { name: "Gilderland", phone: 88997882693 },
+  { name: "Rafael", phone: 88997531459 },
+  { name: "Davi", phone: 88996882277 },
+  { name: "Teste", phone: 88988776655 },
+];
 
-const valmira = "Valmira";
-const telValmira = 88999332142;
-
-const napoleao = "Napoleão";
-const telNapoleao = 88999295583;
-
-const jaime = "Jaime";
-const telJaime = 88998466265;
-
-const joaoPaulo = "João Paulo";
-const telJoaoPaulo = 88999610046;
-
-const antonio = "Antonio";
-const telAntonio = 88998034410;
-
-const ademir = "Ademir";
-const telAdemir = 88997791191;
-
-const cGeronimo = "C.Gerônimo";
-const telCGeronimo = 88996140412;
-
-const eduardo = "Eduardo";
-const telEduardo = 88996341211;
-
-const berson = "Berson";
-const telBerson = 88999745019;
-
-const gilderland = "Gilderland";
-const telGilderland = 88997882693;
-
-const rafael = "Rafael";
-const telRafael = 88997531459;
-
-const davi = "Davi";
-const telDavi = 88996882277;
-
-const teste = "Construindo";
-const telTeste = 88988776655;
+const schedule = [
+  { day: "Seg", time: "06:45", driver: "Valter" },
+  { day: "Seg", time: "08:15", driver: "Valmira" },
+  { day: "Seg", time: "09:45", driver: "Napoleão" },
+  { day: "Seg", time: "11:15", driver: "Jaime" },
+  { day: "Seg", time: "12:50", driver: "João Paulo" },
+  { day: "Seg", time: "14:30", driver: "Antonio" },
+  { day: "Seg", time: "16:00", driver: "Davi" },
+  { day: "Seg", time: "17:00", driver: "Ademir" },
+  { day: "Ter", time: "06:45", driver: "C.Gerônimo" },
+  { day: "Ter", time: "08:15", driver: "Eduardo" },
+  { day: "Ter", time: "09:45", driver: "Berson" },
+  { day: "Ter", time: "11:15", driver: "Gilderland" },
+  { day: "Ter", time: "12:50", driver: "João Paulo" },
+  { day: "Ter", time: "14:30", driver: "Rafael" },
+  { day: "Ter", time: "16:00", driver: "Davi" },
+  { day: "Ter", time: "17:00", driver: "Ademir" },
+  { day: "Qua", time: "06:45", driver: "Valmira" },
+  { day: "Qua", time: "08:15", driver: "Napoleão" },
+  { day: "Qua", time: "09:45", driver: "Jaime" },
+  { day: "Qua", time: "11:15", driver: "João Paulo" },
+  { day: "Qua", time: "12:50", driver: "Antonio" },
+  { day: "Qua", time: "14:30", driver: "Valter" },
+  { day: "Qua", time: "16:00", driver: "Davi" },
+  { day: "Qua", time: "17:00", driver: "Ademir" },
+  { day: "Qui", time: "06:45", driver: "Eduardo" },
+  { day: "Qui", time: "08:15", driver: "Berson" },
+  { day: "Qui", time: "09:45", driver: "Gilderland" },
+  { day: "Qui", time: "11:15", driver: "João Paulo" },
+  { day: "Qui", time: "12:50", driver: "Rafael" },
+  { day: "Qui", time: "14:30", driver: "C.Gerônimo" },
+  { day: "Qui", time: "16:00", driver: "Davi" },
+  { day: "Qui", time: "17:00", driver: "Ademir" },
+  { day: "Sex", time: "06:45", driver: "Napoleão" },
+  { day: "Sex", time: "08:15", driver: "Jaime" },
+  { day: "Sex", time: "09:45", driver: "João Paulo" },
+  { day: "Sex", time: "11:15", driver: "Antonio" },
+  { day: "Sex", time: "12:50", driver: "Valter" },
+  { day: "Sex", time: "14:30", driver: "Valmira" },
+  { day: "Sex", time: "16:00", driver: "Davi" },
+  { day: "Sex", time: "17:00", driver: "Ademir" },
+  { day: "Sab", time: "06:45", driver: "Berson" },
+  { day: "Sab", time: "08:15", driver: "Gilderland" },
+  { day: "Sab", time: "09:45", driver: "João Paulo" },
+  { day: "Sab", time: "11:15", driver: "Rafael" },
+  { day: "Sab", time: "12:50", driver: "C.Gerônimo" },
+  { day: "Sab", time: "14:30", driver: "Eduardo" },
+  { day: "Sab", time: "16:00", driver: "Davi" },
+  { day: "Sab", time: "17:00", driver: "Ademir" },
+];
 
 export default function HorariosTopic() {
   return (
@@ -55,726 +81,41 @@ export default function HorariosTopic() {
         <Image src="/images/cooptasce-zenir.jpg" height={210} width={340} />
       </div>
       <table className="topic">
+        <thead>
+          <tr>
+            <th>Dia</th>
+            <th>Horário</th>
+            <th>Motorista</th>
+            <th>Contato</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr>
-            <td>Seg</td>
-            <td>06:45</td>
-            <td>{valter}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telValter}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Seg</td>
-            <td>08:15</td>
-            <td>{valmira}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telValmira}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Seg</td>
-            <td>09:45</td>
-            <td>{napoleao}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telNapoleao}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Seg</td>
-            <td>11:15</td>
-            <td>{jaime}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telJaime}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Seg</td>
-            <td>12:50</td>
-            <td>{joaoPaulo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telJoaoPaulo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Seg</td>
-            <td>14:30</td>
-            <td>{antonio}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telAntonio}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Seg</td>
-            <td>16:00</td>
-            <td>{davi}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telDavi}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Seg</td>
-            <td>17:00</td>
-            <td>{ademir}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telAdemir}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Ter</td>
-            <td>06:45</td>
-            <td>{cGeronimo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telCGeronimo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Ter</td>
-            <td>08:15</td>
-            <td>{eduardo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telEduardo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Ter</td>
-            <td>09:45</td>
-            <td>{berson}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telBerson}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Ter</td>
-            <td>11:15</td>
-            <td>{gilderland}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telGilderland}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Ter</td>
-            <td>12:50</td>
-            <td>{joaoPaulo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telJoaoPaulo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Ter</td>
-            <td>14:30</td>
-            <td>{rafael}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telRafael}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Ter</td>
-            <td>16:00</td>
-            <td>{davi}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telDavi}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Ter</td>
-            <td>17:00</td>
-            <td>{ademir}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telAdemir}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qua</td>
-            <td>06:45</td>
-            <td>{valmira}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telValmira}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qua</td>
-            <td>08:15</td>
-            <td>{napoleao}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telNapoleao}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qua</td>
-            <td>09:45</td>
-            <td>{jaime}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telJaime}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qua</td>
-            <td>11:15</td>
-            <td>{joaoPaulo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telJoaoPaulo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qua</td>
-            <td>12:50</td>
-            <td>{antonio}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telAntonio}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qua</td>
-            <td>14:30</td>
-            <td>{valter}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telValter}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qua</td>
-            <td>16:00</td>
-            <td>{davi}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telDavi}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qua</td>
-            <td>17:00</td>
-            <td>{ademir}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telAdemir}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qui</td>
-            <td>06:45</td>
-            <td>{eduardo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telEduardo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qui</td>
-            <td>08:15</td>
-            <td>{berson}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telBerson}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qui</td>
-            <td>09:45</td>
-            <td>{gilderland}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telGilderland}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qui</td>
-            <td>11:15</td>
-            <td>{joaoPaulo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telJoaoPaulo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qui</td>
-            <td>12:50</td>
-            <td>{rafael}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telRafael}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qui</td>
-            <td>14:30</td>
-            <td>{cGeronimo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telCGeronimo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qui</td>
-            <td>16:00</td>
-            <td>{davi}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telDavi}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Qui</td>
-            <td>17:00</td>
-            <td>{ademir}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telAdemir}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sex</td>
-            <td>06:45</td>
-            <td>{napoleao}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telNapoleao}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sex</td>
-            <td>08:15</td>
-            <td>{jaime}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telJaime}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sex</td>
-            <td>09:45</td>
-            <td>{joaoPaulo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telJoaoPaulo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sex</td>
-            <td>11:15</td>
-            <td>{antonio}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telAntonio}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sex</td>
-            <td>12:50</td>
-            <td>{valter}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telValter}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sex</td>
-            <td>14:30</td>
-            <td>{valmira}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telValmira}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sex</td>
-            <td>16:00</td>
-            <td>{davi}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telDavi}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sex</td>
-            <td>17:00</td>
-            <td>{ademir}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telAdemir}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sab</td>
-            <td>06:45</td>
-            <td>{berson}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telBerson}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sab</td>
-            <td>08:15</td>
-            <td>{gilderland}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telGilderland}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sab</td>
-            <td>09:45</td>
-            <td>{joaoPaulo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telJoaoPaulo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sab</td>
-            <td>11:15</td>
-            <td>{rafael}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telRafael}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sab</td>
-            <td>12:50</td>
-            <td>{cGeronimo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telCGeronimo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sab</td>
-            <td>14:30</td>
-            <td>{eduardo}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telEduardo}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sab</td>
-            <td>16:00</td>
-            <td>{davi}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telDavi}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Sab</td>
-            <td>17:00</td>
-            <td>{ademir}</td>
-            <td>
-              <a target="_blank" href={`https://wa.me/+55${telAdemir}`}>
-                <Image
-                  src={"/images/logo-whatsapp.webp"}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            </td>
-          </tr>
+          {schedule.map((entry, index) => {
+            const driver = drivers.find(
+              (driver) => driver.name === entry.driver
+            );
+            return (
+              <tr key={index}>
+                <td>{entry.day}</td>
+                <td>{entry.time}</td>
+                <td>{driver.name}</td>
+                <td>
+                  <button>
+                    <a
+                      target="_blank"
+                      href={`https://wa.me/+55${driver.phone}`}
+                    >
+                      <Image
+                        src={"/images/logo-whatsapp.webp"}
+                        width={25}
+                        height={25}
+                      />
+                    </a>
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </>
