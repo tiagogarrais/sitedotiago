@@ -48,11 +48,17 @@ export default function Cidades({ profissionais }) {
 
   return (
     <div>
-      <h1>Brejo Santo</h1>
       <div className="principal centralizada">
+        <h2>Guia Comercial - Brejo Santo</h2>
+        <span>Encontre aqui tudo que você precisa!</span>
+      </div>
+      <div className="principal centralizada">
+        <h2>Transporte Alternativo</h2>
         <Link href="/cidades/brejosanto/topic">
-          <Image src="/images/logo-cooptasce.jpg" height={150} width={330} />
-          <h4>Consultar horários das Vans</h4>
+          {/* <Image src="/images/logo-cooptasce.jpg" height={75} width={150} /> */}
+          <p className="centralizada">
+            {">"} Horários das Vans para Juazeiro do Norte {"<"}
+          </p>
         </Link>
       </div>
       <div className="principal">{renderProfissionaisPorAtividade()}</div>

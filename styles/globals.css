@@ -97,23 +97,16 @@ article {
 }
 
 h1 {
-  margin: 20px auto;
-  background-color: #222;
+  font-size: 2.7rem;
+  margin: 0 0 0 0;
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   color: #fff629;
 }
 
 h2 {
-  text-decoration: underline;
-  background-color: #555;
-  margin: 20px auto;
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   color: #fff629;
 }
 
