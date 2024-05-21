@@ -49,10 +49,6 @@ export default function Cidades({ profissionais }) {
   return (
     <div>
       <div className="principal centralizada">
-        <h2>Guia Comercial - Brejo Santo</h2>
-        <span>Encontre aqui tudo que você precisa!</span>
-      </div>
-      <div className="principal centralizada">
         <h2>Transporte Alternativo</h2>
         <Link href="/cidades/brejosanto/topic">
           {/* <Image src="/images/logo-cooptasce.jpg" height={75} width={150} /> */}
@@ -61,7 +57,13 @@ export default function Cidades({ profissionais }) {
           </p>
         </Link>
       </div>
-      <div className="principal">{renderProfissionaisPorAtividade()}</div>
+      <div className="principal">
+        <div className="principal centralizada">
+          <h2>Guia Comercial - Brejo Santo</h2>
+          <span>Encontre aqui tudo que você precisa!</span>
+        </div>
+        {renderProfissionaisPorAtividade()}
+      </div>
 
       <Rodape />
     </div>
