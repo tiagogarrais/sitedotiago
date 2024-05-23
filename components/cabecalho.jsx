@@ -36,6 +36,7 @@ export default function Cabecalho() {
           </span>
         </span>
       </div>
+
       <Link href="/">
         <Image
           className="logomarca"
@@ -45,9 +46,11 @@ export default function Cabecalho() {
           alt="Logomarca do SiteDoTiago.com.br"
         />
       </Link>
-      <div className="centralizada">
-        <h1>sitedotiago.com.br</h1>
+
+      <div className="principal centralizada">
+        <h1>Site do Tiago</h1>
       </div>
+
       <style jsx>{`
         .cabecalho {
           display: flex;
