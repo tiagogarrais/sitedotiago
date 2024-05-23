@@ -1,0 +1,77 @@
+.menuContainer {
+  position: relative;
+}
+
+.hamburgerIcon {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 999;
+}
+
+.sidebar p {
+  padding: 2px 2px 2px 45px;
+  font-size: 15px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  text-align: left;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar.open {
+  width: 80%;
+}
+
+/* Para telas de celular */
+@media only screen and (max-width: 500px) {
+  .sidebar.open {
+    width: 80%;
+  }
+}
+
+/* Para telas de celular um pouco maiores */
+@media only screen and (min-width: 600px) {
+  .sidebar.open {
+    width: 60%;
+  }
+}
+
+/* Para telas de tablets um pouco maiores */
+@media only screen and (min-width: 700px) {
+  .sidebar.open {
+    width: 60%;
+  }
+}
+
+/* Para telas maiores */
+@media only screen and (min-width: 800px) {
+  .sidebar.open {
+    width: 45%;
+  }
+}
+
+/* Para telas maiores */
+@media only screen and (min-width: 900px) {
+  .sidebar.open {
+    width: 400px;
+  }
+}
