@@ -236,7 +236,7 @@ export default function Porteiras() {
         </p>
 
         <p className="aviso">
-          Atenção: Caso atinja a lotação o veículo Segundaue viagem antes do
+          Atenção: Caso atinja a lotação o veículo segue viagem antes do
           horário.
         </p>
 
