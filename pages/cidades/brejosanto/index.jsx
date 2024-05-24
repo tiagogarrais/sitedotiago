@@ -89,13 +89,28 @@ export default function Cidades({ profissionais }) {
       </div>
       <div className="principal centralizada">
         <h2>Serviços de utilidade pública</h2>
-        <h3>Transporte Alternativo</h3>
-        <Link href="/cidades/brejosanto/topic">
-          {/* <Image src="/images/logo-cooptasce.jpg" height={75} width={150} /> */}
-          <p className="centralizada">
-            {">"} Horários das Vans para Juazeiro do Norte {"<"}
-          </p>
-        </Link>
+        <h3>Horário das vans de Transporte Alternativo</h3>
+        {/* <Image src="/images/logo-cooptasce.jpg" height={75} width={150} /> */}
+
+        <button className="botao">
+          <Link href="/cidades/brejosanto/transportes/juazeiro-do-norte">
+            Juazeiro do Norte-CE
+          </Link>
+        </button>
+
+        <button className="botao">
+          <Link href="/cidades/brejosanto/transportes/porteiras">
+            Porteiras-CE
+          </Link>
+        </button>
+
+        <p className="centralizada">
+          {">"} (Em breve) Milagres-CE {"<"}
+        </p>
+
+        <p className="centralizada">
+          {">"} (Em breve) Penaforte-CE {"<"}
+        </p>
       </div>
       <div className="principal">
         <div className="principal centralizada">
