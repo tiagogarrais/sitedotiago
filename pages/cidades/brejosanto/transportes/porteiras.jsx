@@ -227,8 +227,8 @@ export default function Porteiras() {
             marginRight: "auto",
           }}
           src="/images/transportes/porteiras/porteiras1.jpg"
-          height={340}
-          width={550}
+          height={210}
+          width={340}
           alt="Ponto de embarque em frente à Panificadora Adriana"
         />
         <p style={{ textAlign: "center" }}>
