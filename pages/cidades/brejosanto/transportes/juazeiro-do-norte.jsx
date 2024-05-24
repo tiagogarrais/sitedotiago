@@ -83,8 +83,8 @@ export default function JuazeiroDoNorte() {
             marginRight: "auto",
           }}
           src="/images/transportes/juazeiro-do-norte/juazeiro-do-norte1.jpg"
-          height={340}
-          width={550}
+          height={210}
+          width={340}
           alt="Ponto de embarque em frente à Zenir Móveis"
         />
         <p style={{ textAlign: "center" }}>Local: Em frente à Zenir Móveis</p>
