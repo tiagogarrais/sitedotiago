@@ -85,7 +85,7 @@ export default function Cidades({ profissionais }) {
       </div>
 
       <div className="principal centralizada">
-        <h1>Brejo Santo - CE</h1>
+        <h2>Brejo Santo - CE</h2>
       </div>
       <div className="principal centralizada">
         <h2>Serviços de utilidade pública</h2>
