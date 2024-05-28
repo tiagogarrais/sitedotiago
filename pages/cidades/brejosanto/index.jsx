@@ -2,7 +2,6 @@ import Link from "next/link";
 import Profissionais from "../../../components/profissionais";
 import Image from "next/image";
 import React, { useState } from "react";
-import Rodape from "../../../components/rodape";
 import styles from "../../../components/menu-hamburger/menu-hamburger.module.css";
 import { MongoClient } from "mongodb";
 
@@ -120,7 +119,6 @@ export default function Cidades({ profissionais }) {
 
         {renderProfissionaisPorAtividade()}
       </div>
-      <Rodape />
     </div>
   );
 }
