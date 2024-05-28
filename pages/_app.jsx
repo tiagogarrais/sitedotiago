@@ -2,6 +2,7 @@ import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 import "../styles/globals.css";
 import Cabecalho from "../components/cabecalho";
+import Rodape from "../components/rodape";
 
 export default function App({
   Component,
@@ -50,6 +51,7 @@ export default function App({
       </Head>
       <Cabecalho />
       <Component {...pageProps} />
+      <Rodape />
     </SessionProvider>
   );
 }
