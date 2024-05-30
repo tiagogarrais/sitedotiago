@@ -9,8 +9,9 @@ export default function Formulario() {
   const [numeroWhatsapp, setNumeroWhatsapp] = useState("");
   const [instagram, setInstagram] = useState("");
   const [cidade, setCidade] = useState("Brejo Santo");
+  const [banner, setBanner] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [textoBotao, setTextoBotao] = useState("Enviar Cadastro");
+  const [textoBotao, setTextoBotao] = useState("Enviar cadastro");
   const [aviso, setAviso] = useState("");
 
   useEffect(() => {
@@ -20,11 +21,11 @@ export default function Formulario() {
     }
 
     if (showModal) {
-      // Configurar temporizador para fechar o modal após 10 segundos
+      // Configurar temporizador para fechar o modal após 5 segundos
       const timer = setTimeout(() => {
         setShowModal(false);
         window.location.href = "/";
-      }, 10000);
+      }, 5000);
 
       // Limpar o temporizador ao desmontar o componente
       return () => clearTimeout(timer);
@@ -36,8 +37,8 @@ export default function Formulario() {
     setTextoBotao("Aguarde...");
 
     if (!numeroWhatsapp && !instagram) {
-      setTextoBotao("Corrigir e enviar cadastro");
-      setAviso("Informe WhatsApp ou Instagram");
+      setTextoBotao("Completar e enviar cadastro");
+      setAviso("Você precisa informar WhatsApp ou Instagram");
       return;
     }
 
@@ -50,6 +51,7 @@ export default function Formulario() {
       numeroWhatsapp: numeroWhatsapp,
       instagram: instagram,
       cidade: cidade,
+      banner: false,
     };
 
     // Limpar os campos do formulário
@@ -74,6 +76,7 @@ export default function Formulario() {
 
         // Exibe o modal ao receber a resposta do servidor
         setShowModal(true);
+        setTextoBotao("Enviar cadastro");
 
         // Redirecionar o usuário ou exibir uma mensagem de sucesso, etc.
       })
@@ -121,7 +124,9 @@ export default function Formulario() {
             placeholder="Nome no Instagram"
             value={instagram}
             onChange={(e) => {
-              const textInsta = e.target.value.toLowerCase().replace(/\s/g, ""); // Converte para minúsculas e remove espaços
+              const textInsta = e.target.value
+                .toLowerCase() //Converte para minúsculas
+                .replace(/[\s@]/g, ""); // Remove espaços e caractere "@"
               setInstagram(textInsta);
             }}
           />
@@ -135,8 +140,7 @@ export default function Formulario() {
 
       {showModal && (
         <div className="modal">
-          <p>Recebemos o seu cadastro!</p>
-          <p>Publicaremos em no máximo 24h</p>
+          <p>Recebemos o seu cadastro! Publicaremos em até 24h</p>
         </div>
       )}
     </>
