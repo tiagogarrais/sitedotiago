@@ -7,6 +7,7 @@ export default function Profissionais({
   whatsApp,
   instagram,
   premium,
+  banner,
 }) {
   const codigoArea = whatsApp ? whatsApp.substring(0, 2) : "";
   const primeiraParteTelefone = whatsApp ? whatsApp.substring(2, 7) : "";
