@@ -8,12 +8,10 @@ export default async function Formulario(req, res) {
     const { nome, atividade, numeroWhatsapp, instagram, cidade } = req.body;
 
     if (!nome || !atividade || (!numeroWhatsapp && !instagram) || !cidade) {
-      return res
-        .status(400)
-        .json({
-          error:
-            "Obrigatório informar, nome, atividade e pelo menos uma forma de contato (Instagram ou WhatsApp).",
-        });
+      return res.status(400).json({
+        error:
+          "Obrigatório informar, nome, atividade e pelo menos uma forma de contato (Instagram ou WhatsApp).",
+      });
     }
 
     try {
@@ -49,6 +47,7 @@ export default async function Formulario(req, res) {
         slugCidade,
         autorizaPublicar: false,
         premium: true,
+        banner: false,
       });
 
       // Fechar a conexão com o banco de dados
