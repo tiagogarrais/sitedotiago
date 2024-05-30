@@ -9,7 +9,6 @@ export default function Formulario() {
   const [numeroWhatsapp, setNumeroWhatsapp] = useState("");
   const [instagram, setInstagram] = useState("");
   const [cidade, setCidade] = useState("Brejo Santo");
-  const [banner, setBanner] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [textoBotao, setTextoBotao] = useState("Enviar cadastro");
   const [aviso, setAviso] = useState("");
@@ -51,7 +50,6 @@ export default function Formulario() {
       numeroWhatsapp: numeroWhatsapp,
       instagram: instagram,
       cidade: cidade,
-      banner: false,
     };
 
     // Limpar os campos do formulário
