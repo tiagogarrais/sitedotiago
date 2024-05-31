@@ -18,34 +18,72 @@ export default function Cidades({ profissionais }) {
 
     // Ordenar as categorias alfabeticamente
     const categoriasOrdenadas = Object.keys(profissionaisPorAtividade).sort();
+    return categoriasOrdenadas.map((atividade) => {
+      const profissionaisAtividade = profissionaisPorAtividade[atividade];
+      return (
+        <div key={atividade}>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <h3 id={atividade}>{atividade}</h3>
+            <p style={{ marginLeft: "10px" }}>
+              <Link href={`/cidades/cadastro?atividade=${atividade}`}>
+                <button className="botao-alinhado-esquerda">
+                  Cadastre outro(a)
+                </button>
+              </Link>
+            </p>
+          </div>
+          {profissionaisAtividade.map((profissional) => (
+            <Profissionais
+              key={profissional.id}
+              id={profissional.id}
+              nome={profissional.nome}
+              atividade={profissional.atividade}
+              cidade={profissional.cidade}
+              whatsApp={profissional.whatsApp}
+              instagram={profissional.instagram}
+              premium={profissional.premium}
+              banner={profissional.banner}
+            />
+          ))}
 
-    return categoriasOrdenadas.map((atividade) => (
-      <div key={atividade}>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <h3 id={atividade}>{atividade}</h3>
-          <p style={{ marginLeft: "10px" }}>
-            <Link href={`/cidades/cadastro?atividade=${atividade}`}>
-              <button className="botao-alinhado-esquerda">
-                Cadastre outro(a)
-              </button>
-            </Link>
-          </p>
+          <div
+            className="banner"
+            id={
+              "banner-" +
+              atividade
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase()
+                .replace(/\s/g, "-")
+            }
+          >
+            {profissionaisAtividade.find(
+              (profissional) => profissional.banner
+            ) ? (
+              <a
+                target="_blank"
+                href={`https://wa.me/${profissionaisAtividade.find((profissional) => profissional.banner).whatsApp}`}
+              >
+                <Image
+                  src={`/images/cidades/anuncios/${atividade
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .toLowerCase()
+                    .replace(/\s/g, "-")}.jpeg`}
+                  alt={`Banner ${atividade}`}
+                  width={750}
+                  height={75}
+                />
+              </a>
+            ) : (
+              <div className="anuncie-aqui">
+                <Link href="/cidades/anuncie-aqui">Anuncie aqui</Link>
+              </div>
+            )}
+          </div>
         </div>
-        {profissionaisPorAtividade[atividade].map((profissional) => (
-          <Profissionais
-            key={profissional.id}
-            id={profissional.id}
-            nome={profissional.nome}
-            atividade={profissional.atividade}
-            cidade={profissional.cidade}
-            whatsApp={profissional.whatsApp}
-            instagram={profissional.instagram}
-            premium={profissional.premium}
-          />
-        ))}
-        <div className="banner">Anuncie aqui</div>
-      </div>
-    ));
+      );
+    });
   };
 
   const [isOpen, setIsOpen] = useState(false);
