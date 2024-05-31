@@ -20,8 +20,6 @@ body {
   background-color: #444;
   height: 60px;
   text-align: center;
-
-  display: none;
 }
 
 p {
@@ -214,7 +212,7 @@ form button:hover {
 .botao {
   width: 50%;
   margin-bottom: 10px;
-  z-index: 999; /* Garante que o botão fique acima de outros elementos */
+  /*z-index: 999; /* Garante que o botão fique acima de outros elementos */
   background-color: #007bff; /* Cor de fundo do botão */
   color: #ffffff; /* Cor do texto do botão */
   padding: 20px 20px; /* Espaçamento interno do botão */
@@ -225,7 +223,7 @@ form button:hover {
 }
 
 .botao-alinhado-esquerda {
-  z-index: 999; /* Garante que o botão fique acima de outros elementos */
+  /*z-index: 999; /* Garante que o botão fique acima de outros elementos */
   background-color: #007bff; /* Cor de fundo do botão */
   color: #ffffff; /* Cor do texto do botão */
   padding: 8px 20px; /* Espaçamento interno do botão */
@@ -242,7 +240,7 @@ form button:hover {
   transform: translateX(
     -50%
   ); /* Volta metade da sua largura para centralizá-lo */
-  z-index: 999; /* Garante que o botão fique acima de outros elementos */
+  /*z-index: 999; /* Garante que o botão fique acima de outros elementos */
   background-color: #007bff; /* Cor de fundo do botão */
   color: #ffffff; /* Cor do texto do botão */
   padding: 10px 20px; /* Espaçamento interno do botão */
