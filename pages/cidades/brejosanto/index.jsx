@@ -62,7 +62,7 @@ export default function Cidades({ profissionais }) {
             ) ? (
               <a
                 target="_blank"
-                href={`https://wa.me/${profissionaisAtividade.find((profissional) => profissional.banner).whatsApp}`}
+                href={`https://wa.me/+55${profissionaisAtividade.find((profissional) => profissional.banner).whatsApp}`}
               >
                 <div className="containerBannerImg">
                   <Image
