@@ -9,6 +9,10 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+.bannerImg {
+  position: static;
+}
+
 .banner {
   display: flex;
   align-items: center;

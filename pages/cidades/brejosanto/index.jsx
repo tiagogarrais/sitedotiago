@@ -65,14 +65,16 @@ export default function Cidades({ profissionais }) {
                 href={`https://wa.me/${profissionaisAtividade.find((profissional) => profissional.banner).whatsApp}`}
               >
                 <Image
+                  className="bannerImg"
+                  fill
                   src={`/images/cidades/anuncios/${atividade
                     .normalize("NFD")
                     .replace(/[\u0300-\u036f]/g, "")
                     .toLowerCase()
                     .replace(/\s/g, "-")}.jpeg`}
                   alt={`Banner ${atividade}`}
-                  width={750}
-                  height={75}
+                  //width={750}
+                  //height={75}
                 />
               </a>
             ) : (
