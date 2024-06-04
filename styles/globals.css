@@ -1,16 +1,20 @@
 body {
-  width: 95%;
-  max-width: 810px;
+  width: 98%;
+  min-width: 600px;
+  max-width: 900px;
   margin: auto;
   margin-top: 20px;
+  margin-left: 40px;
   background-color: #000;
   color: #fff;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.bannerImg {
-  position: static;
+.containerBannerImg {
+  position: relative;
+  width: 550px;
+  height: 100px;
 }
 
 .banner {
@@ -20,10 +24,11 @@ body {
   border-radius: 8px;
   border-color: #fff629;
   border-style: dotted;
-  padding: 15px;
+  padding: 2px;
   background-color: #444;
-  height: 60px;
+  height: 100px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 p {
