@@ -112,6 +112,7 @@ export default function Formulario() {
           value={numeroWhatsapp}
           onChange={(e) => setNumeroWhatsapp(e.target.value)}
           placeholder="WhatsApp (99) 99999-9999"
+          type="tel"
         />
 
         <label style={{ margin: "auto", width: "100%", textAlign: "center" }}>
