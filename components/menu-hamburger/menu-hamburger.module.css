@@ -3,10 +3,10 @@
 }
 
 .hamburgerIcon {
-  font-size: 30px;
+  font-size: 60px;
   cursor: pointer;
   position: fixed;
-  top: 10px;
+  top: 15px;
   left: 10px;
   z-index: 1000;
 }
@@ -25,8 +25,8 @@
 }
 
 .sidebar p {
-  padding: 2px 2px 2px 45px;
-  font-size: 15px;
+  padding: 2px 2px 2px 65px;
+  font-size: 25px;
   color: white;
   display: block;
   transition: 0.3s;
