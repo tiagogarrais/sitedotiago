@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /cidades/aprovar
+
+Sitemap: https://www.sitedotiago.com.br/sitemap.xml

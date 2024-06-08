@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://www.sitedotiago.com.br/</loc>
+      <lastmod>2024-06-08</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.1</priority>
+   </url>
+
+   <url>
+      <loc>https://www.sitedotiago.com.br/cidades/brejosanto</loc>
+      <lastmod>2024-06-08</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+   </url>
+
+   <url>
+      <loc>https://www.sitedotiago.com.br/cidades/anuncie-aqui</loc>
+      <lastmod>2024-06-08</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.1</priority>
+   </url>
+   <!-- Adicione mais URLs conforme necessário -->
+</urlset>
