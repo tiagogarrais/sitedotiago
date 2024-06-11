@@ -236,6 +236,10 @@ form button:hover {
   box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar o botão */
 }
 
+.botao-grande {
+  width: 80%;
+}
+
 .botao-alinhado-esquerda {
   /*z-index: 999; /* Garante que o botão fique acima de outros elementos */
   background-color: #007bff; /* Cor de fundo do botão */

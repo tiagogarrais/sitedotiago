@@ -100,7 +100,7 @@ export default function Rodape() {
           >
             facebook.com/admprogramador
           </a>
-          <small className="centralizada">
+          <small>
             <Contador visitCount={visitCount} />
           </small>
           <p id="creditos">
