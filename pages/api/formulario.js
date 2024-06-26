@@ -5,7 +5,17 @@ const { MONGODB_URI, MONGODB_DB } = process.env;
 export default async function Formulario(req, res) {
   if (req.method === "POST") {
     // Verificar se os dados do formulário foram enviados corretamente
-    const { nome, atividade, numeroWhatsapp, instagram, cidade } = req.body;
+    const {
+      nome,
+      atividade,
+      atividade2,
+      atividade3,
+      atividade4,
+      atividade5,
+      numeroWhatsapp,
+      instagram,
+      cidade,
+    } = req.body;
 
     if (!nome || !atividade || (!numeroWhatsapp && !instagram) || !cidade) {
       return res.status(400).json({
@@ -41,6 +51,10 @@ export default async function Formulario(req, res) {
       await db.collection("profissionais").insertOne({
         nome,
         atividade,
+        atividade2,
+        atividade3,
+        atividade4,
+        atividade5,
         whatsApp,
         instagram,
         cidade,

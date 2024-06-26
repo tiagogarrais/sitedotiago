@@ -6,6 +6,10 @@ export default function Formulario() {
   const router = useRouter();
   const [nome, setNome] = useState("");
   const [atividade, setAtividade] = useState("");
+  const [atividade2, setAtividade2] = useState("");
+  const [atividade3, setAtividade3] = useState("");
+  const [atividade4, setAtividade4] = useState("");
+  const [atividade5, setAtividade5] = useState("");
   const [numeroWhatsapp, setNumeroWhatsapp] = useState("");
   const [instagram, setInstagram] = useState("");
   const [cidade, setCidade] = useState("Brejo Santo");
@@ -46,18 +50,26 @@ export default function Formulario() {
     // Construir o objeto com os dados do formulário
     const formData = {
       nome: nome,
-      atividade: atividade,
       numeroWhatsapp: numeroWhatsapp,
       instagram: instagram,
       cidade: cidade,
+      atividade: atividade,
+      atividade2: atividade2,
+      atividade3: atividade3,
+      atividade4: atividade4,
+      atividade5: atividade5,
     };
 
     // Limpar os campos do formulário
     setNome("");
-    setAtividade("");
     setNumeroWhatsapp("");
     setInstagram("");
     setCidade("");
+    setAtividade("");
+    setAtividade2("");
+    setAtividade3("");
+    setAtividade4("");
+    setAtividade5("");
 
     // Enviar os dados para o servidor backend via POST
     fetch("/api/formulario", {
@@ -96,14 +108,6 @@ export default function Formulario() {
           onChange={(e) => setNome(e.target.value)}
         ></input>
 
-        <input
-          type="text"
-          placeholder="Profissão ou atividade"
-          required
-          value={atividade}
-          onChange={(e) => setAtividade(e.target.value)}
-        ></input>
-
         <InputMask
           mask="(99) 99999-9999"
           maskChar="_"
@@ -130,6 +134,47 @@ export default function Formulario() {
             }}
           />
         </label>
+
+        <input
+          type="text"
+          placeholder="Profissão ou atividade principal"
+          required
+          value={atividade}
+          onChange={(e) => setAtividade(e.target.value)}
+        ></input>
+
+        <p>
+          Os campos abaixo são de preenchimento opcional. Utilize para divulgar
+          a sua atividade em outros ramos de atividade.
+        </p>
+
+        <input
+          type="text"
+          placeholder="Profissão ou atividade adicional"
+          value={atividade2}
+          onChange={(e) => setAtividade2(e.target.value)}
+        ></input>
+
+        <input
+          type="text"
+          placeholder="Profissão ou atividade adicional"
+          value={atividade3}
+          onChange={(e) => setAtividade3(e.target.value)}
+        ></input>
+
+        <input
+          type="text"
+          placeholder="Profissão ou atividade adicional"
+          value={atividade4}
+          onChange={(e) => setAtividade4(e.target.value)}
+        ></input>
+
+        <input
+          type="text"
+          placeholder="Profissão ou atividade adicional"
+          value={atividade5}
+          onChange={(e) => setAtividade5(e.target.value)}
+        ></input>
 
         <div id="aviso" className="centralizada">
           {aviso}
