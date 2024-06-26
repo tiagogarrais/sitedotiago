@@ -145,7 +145,8 @@ export default function Formulario() {
 
         <p>
           Os campos abaixo são de preenchimento opcional. Utilize para divulgar
-          a sua atividade em outros ramos de atividade.
+          suas informações de contato em outros ramos de atividade além do
+          principal.
         </p>
 
         <input
