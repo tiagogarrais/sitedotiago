@@ -142,9 +142,11 @@ export default function Cidades({ profissionais }) {
           </Link>
         </button>
 
-        <p className="centralizada">
-          {">"} (Em breve) Milagres-CE {"<"}
-        </p>
+        <button className="botao">
+          <Link href="/cidades/brejosanto/transportes/milagres">
+            Milagres-CE
+          </Link>
+        </button>
 
         <p className="centralizada">
           {">"} (Em breve) Penaforte-CE {"<"}
