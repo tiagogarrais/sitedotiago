@@ -19,6 +19,8 @@ export default function App({
           content="Catálogo com empresas e profissionais autônomos em Brejo Santo. Encontre os melhores serviços e produtos da cidade."
         />
         <meta name="google-adsense-account" content="ca-pub-6970958313357869" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6970958313357869" crossorigin="anonymous"/>
+        
         <meta name="author" content="Tiago das Graças Arrais" />
         <meta
           name="keywords"
