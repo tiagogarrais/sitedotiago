@@ -7,8 +7,13 @@ export default function Home() {
   return (
     <>
       <h2>Escolha a sua cidade</h2>
+
       <Link href="/cidades/brejosanto/">
         <button className="centralizada botao botao-grande">Brejo Santo</button>
+      </Link>
+
+      <Link href="/cidades/pio-ix/">
+        <button className="centralizada botao botao-grande">Pio IX</button>
       </Link>
     </>
   );

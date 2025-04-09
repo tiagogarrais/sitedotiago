@@ -12,7 +12,7 @@ export default function Formulario() {
   const [atividade5, setAtividade5] = useState("");
   const [numeroWhatsapp, setNumeroWhatsapp] = useState("");
   const [instagram, setInstagram] = useState("");
-  const [cidade, setCidade] = useState("Brejo Santo");
+  const [cidade, setCidade] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [textoBotao, setTextoBotao] = useState("Enviar cadastro");
   const [aviso, setAviso] = useState("");
@@ -99,13 +99,20 @@ export default function Formulario() {
   return (
     <>
       <form className="principal" onSubmit={handleSubmit}>
-        <h2>Cadastrando em Brejo Santo-CE</h2>
         <input
           type="text"
-          placeholder="Nome"
+          placeholder="Nome da empresa ou do(a) Profissional"
           required
           value={nome}
           onChange={(e) => setNome(e.target.value)}
+        ></input>
+
+        <input
+          type="text"
+          placeholder="Cidade"
+          required
+          value={cidade}
+          onChange={(e) => setCidade(e.target.value)}
         ></input>
 
         <InputMask
