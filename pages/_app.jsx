@@ -16,22 +16,26 @@ export default function App({
         </title>
         <meta
           name="description"
-          content="Catálogo com empresas e profissionais autônomos em Brejo Santo. Encontre os melhores serviços e produtos da cidade."
+          content="Este é um catálogo com empresas e profissionais autônomos de diversas cidades. Encontre aqui os melhores serviços e produtos da sua região!"
         />
         <meta name="google-adsense-account" content="ca-pub-6970958313357869" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6970958313357869" crossorigin="anonymous"/>
-        
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6970958313357869"
+          crossorigin="anonymous"
+        />
+
         <meta name="author" content="Tiago das Graças Arrais" />
         <meta
           name="keywords"
-          content="guia comercial, empresas, profissionais autônomos, Brejo Santo, serviços, produtos"
+          content="guia comercial, empresas, profissionais autônomos, serviços, produtos"
         />
 
         {/* Open Graph meta tags */}
-        <meta property="og:title" content="Guia Comercial de Brejo Santo" />
+        <meta property="og:title" content="Guia Comercial" />
         <meta
           property="og:description"
-          content="Catálogo com empresas e profissionais autônomos em Brejo Santo. Encontre os melhores serviços e produtos da cidade."
+          content="Este é um catálogo com empresas e profissionais autônomos de diversas cidades. Encontre aqui os melhores serviços e produtos da sua região!"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.sitedotiago.com.br" />
@@ -42,10 +46,10 @@ export default function App({
 
         {/* Twitter meta tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Guia Comercial de Brejo Santo" />
+        <meta name="twitter:title" content="Guia Comercial" />
         <meta
           name="twitter:description"
-          content="Catálogo com empresas e profissionais autônomos em Brejo Santo. Encontre os melhores serviços e produtos da cidade."
+          content="Este é um catálogo com empresas e profissionais autônomos de diversas cidades. Encontre aqui os melhores serviços e produtos da sua região!"
         />
         <meta
           name="twitter:image"
