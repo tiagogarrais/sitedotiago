@@ -131,11 +131,17 @@ export default function Cidades({ profissionais }) {
         {/* <Image src="/images/logo-cooptasce.jpg" height={75} width={150} /> */}
 
         <button className="botao">
-          <Link href="/cidades/pio-ix/transportes/picos">Picos-PI</Link>
+          <Link href="/cidades/pio-ix/transportes/picos">Picos - PI</Link>
+        </button>
+
+        <button className="botao">
+          <Link href="/cidades/pio-ix/transportes/campos-sales">
+            Campos Sales - CE
+          </Link>
         </button>
 
         <p className="centralizada">
-          {">"} (Em breve) Campos Sales-CE {"<"}
+          {">"} Qual a próxima cidade? {"<"}
         </p>
       </div>
       <div className="principal">
